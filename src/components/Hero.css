@@ -1,0 +1,80 @@
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for overlay */
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  overflow: hidden;
+  border-radius: 8px; 
+}
+
+.hero-video {
+  width: 100%;
+  object-fit: cover;
+  filter: blur(6px) brightness(1); 
+}
+
+/* Overlay text */
+.hero-content {
+  position: absolute; /* Overlay on top of video */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+.Video-Container{
+     position: relative;
+  width: 100%;
+  max-height: 800px; /* optional, keeps it from being too wide */
+  aspect-ratio: 16 / 9; /* keeps 16:9 ratio */
+  overflow: hidden;
+  border-radius: 8px; /* optional */
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeSlideUp 1s ease forwards 0.5s; /* delay 0.5s */
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+    animation: fadeSlideUp 1s ease forwards 1s; /* delay 1s */
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+
+  .hero-text h1 {
+    font-size: 1rem;
+  }
+  .hero-text p {
+    font-size: 0.8rem;
+  }
+  .hero-content {
+
+  top: 60%;
+  left: 50%;
+
+}
+
+}

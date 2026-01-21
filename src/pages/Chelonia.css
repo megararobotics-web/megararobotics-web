@@ -1,0 +1,385 @@
+/* === GOOGLE FONT === */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* === SCROLL ANIMATION CLASSES === */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.scroll-animate.fade-in-up {
+  transform: translateY(50px);
+}
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+/* === END SCROLL ANIMATION CLASSES === */
+
+
+/* === CARD SECTION === */
+.chelonia-page-section {
+  padding: 100px 20px 50px;
+  text-align: center;
+  background-color: #fff; /* fallback color */
+  
+  /* Background image */
+  
+  background-size: cover;      /* cover entire section */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+  position: relative;          /* needed if you add overlays */
+}
+.chelonia-page-section::before{
+    content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') center/cover no-repeat;
+    filter: blur(5px) opacity(0.2);  /* ✅ blur + fade */
+  z-index: 0;     
+}
+.chelonia-page-section>*{
+    position: relative;
+  z-index: 1;
+}
+.chelonia-page-main-title {
+  font-size: 2.5rem;
+  color: #084386;
+  margin-bottom: 50px;
+}
+
+.chelonia-page-grid-container {
+  max-width: 1400px; /* ✅ Adjusted for 3 columns */
+  margin: 0 auto;
+}
+
+.chelonia-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* ✅ Changed to 3-column layout */
+  gap: 40px;
+}
+
+/* Card wrapper */
+.chelonia-page-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image block */
+.chelonia-page-card-img {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.chelonia-page-card-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  margin-bottom: -60px; /* overlap effect */
+}
+
+/* Content block */
+.chelonia-page-card-content {
+  background-color: #0066cc;
+  color: #fff;
+  width: 100%;
+  min-height: 280px; 
+  padding: 70px 25px 30px; /* Extra top padding for overlap */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.chelonia-page-card:hover .chelonia-page-card-content {
+  transform: translateY(-5px);
+}
+
+.chelonia-page-card-content h3 {
+  font-size: 1.7rem;
+  margin-bottom: 5px;
+}
+
+.chelonia-page-card-content p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.chelonia-page-card-content button {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #fff;  /* White outline */
+  color: #fff;             /* White text */
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Pushes button to bottom */
+}
+
+.chelonia-page-card-content button:hover {
+  background: #fff;
+  color: #0066cc;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* === VISION/MISSION SECTION === */
+.chelonia-page-vision-section {
+  padding: 60px 20px;
+  background: linear-gradient(270deg, #cdd6e4, #c2e9fb, #eef2f7, #c2e9fb);
+}
+
+/* Container Styling */
+.chelonia-page-vision-container {
+  max-width: 900px;
+  margin: 40px auto; /* space from top/bottom */
+  background: linear-gradient(135deg, #679dcf, #095785); /* modern blue gradient */
+  color: #fff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* floating card effect */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover lift effect */
+.chelonia-page-vision-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+/* Optional decorative overlay */
+.chelonia-page-vision-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 70%);
+  pointer-events: none;
+  border-radius: 20px;
+  z-index: 0;
+  animation: subtleGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtleGlow {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.05; }
+}
+
+/* Inner content above overlay */
+.chelonia-page-vision-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings */
+.chelonia-page-vision-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.chelonia-page-vision-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+.chelonia-page-vision-content h3 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.chelonia-page-vision-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.chelonia-page-vision-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.chelonia-page-vision-buttons button {
+  background-color: #0066cc;
+  color: #fff;
+  border: 2px solid #0066cc;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chelonia-page-vision-buttons button:hover {
+  background-color: #fff;
+  color: #0066cc;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* === FAQ SECTION === */
+.chelonia-page-faq-section {
+  padding: 40px 10px 60px;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(270deg, #cdd6e4, #c2e9fb, #eef2f7, #c2e9fb);
+}
+.chelonia-page-faq-section::before{
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/bg.png') center/cover no-repeat;
+  opacity: 0.15;  /* Make it very subtle */
+  z-index: 0;     /* Behind the content */
+  pointer-events: none;
+}
+@keyframes professionalBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* smooth gradient animation */
+@keyframes professionalBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.chelonia-page-faq-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0a2a8b;
+  margin-bottom: 40px;
+}
+
+.chelonia-page-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* FAQ Item */
+.chelonia-page-faq-item {
+  background: linear-gradient(135deg, #317fc9, #0a2a8b);
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Animation default state */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+}
+
+/* Animation visible state */
+.chelonia-page-faq-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover state */
+.chelonia-page-faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(10, 42, 139, 0.3);
+}
+
+.chelonia-page-faq-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.chelonia-page-faq-item li {
+  margin-bottom: 5px;
+}
+
+
+/* === RESPONSIVE STYLES === */
+@media (max-width: 1024px) { /* ✅ Added tablet breakpoint */
+  .chelonia-page-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .chelonia-page-main-title,
+  .chelonia-page-faq-title {
+    font-size: 2rem;
+  }
+
+  .chelonia-page-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column */
+  }
+
+  .chelonia-page-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .chelonia-page-card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .chelonia-page-card-content p,
+  .chelonia-page-vision-content p,
+  .chelonia-page-faq-item {
+    font-size: 1rem;
+  }
+}
+

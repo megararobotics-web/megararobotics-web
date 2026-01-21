@@ -1,0 +1,1367 @@
+import React, { useRef } from "react";
+import "./B1Experiment.css";
+import topArrow from "../assets/uparrow.png";
+
+export default function CheloniaManual() {
+  const topRef = useRef(null); // Top reference for scroll-to-top
+
+  // Centralized content map
+  const contentMap = {
+    Overview: {
+      type: "section",
+      content: (
+        <>
+          <p>
+            Chelonia User Manual – Base Version! An extensive guide to unlocking the potential of your versatile robotic companion.
+          </p>
+          <ul>
+            <li>Includes 30 diverse experiments</li>
+            <li>Equipped with motors, sensors, and Bluetooth</li>
+            <li>Hands-on learning for robotics enthusiasts</li>
+          </ul>
+        </>
+      ),
+    },
+    "Getting Started": {
+      type: "section",
+      content: (
+        <>
+          <p>Follow these steps to get your Chelonia Robot up and running:</p>
+          <ul>
+            <li>Unbox all components</li>
+            <li>Connect motors and sensors</li>
+            <li>Upload basic example code</li>
+          </ul>
+        </>
+      ),
+    },
+    "Custom Command Follower": {
+      type: "experiment",
+      content: (
+        <>
+          <p>This experiment teaches Chelonia to follow custom commands.</p>
+          <ul>
+            <li>Step 1: Connect motors and sensors</li>
+            <li>Step 2: Upload command follower code</li>
+            <li>Step 3: Test commands using mobile app</li>
+          </ul>
+        </>
+      ),
+    },
+    "Chelonia Control Using Mobile App": {
+      type: "experiment",
+      content: (
+        <>
+          <p>Control Chelonia remotely via mobile application.</p>
+          <ul>
+            <li>Step 1: Pair Bluetooth</li>
+            <li>Step 2: Connect app to robot</li>
+            <li>Step 3: Control movements</li>
+          </ul>
+        </>
+      ),
+    },
+    "Wireless Controlled": {
+      type: "experiment",
+      content: (
+        <>
+          <p>Enable wireless control of Chelonia using RF or Bluetooth modules.</p>
+          <ul>
+            <li>Step 1: Setup wireless module</li>
+            <li>Step 2: Upload wireless control code</li>
+            <li>Step 3: Test movement commands</li>
+          </ul>
+        </>
+      ),
+    },
+    "Bluetooth Speed Control": {
+      type: "experiment",
+      content: (
+        <>
+          <p>Control speed of motors via Bluetooth commands.</p>
+          <ul>
+            <li>Step 1: Connect motor driver</li>
+            <li>Step 2: Implement speed commands</li>
+            <li>Step 3: Test varying speed levels</li>
+          </ul>
+        </>
+      ),
+    },
+    // Add all other beginner, intermediate, advanced items similarly
+  };
+
+  // Dynamically create refs for all items
+  const itemRefs = useRef(
+    Object.keys(contentMap).reduce((acc, key) => {
+      acc[key] = React.createRef();
+      return acc;
+    }, {})
+  );
+
+  // Scroll function
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Navigation lists
+  const beginnerItems = [
+    "Custom Command Follower",
+    "Chelonia Control Using Mobile App",
+    "Wireless Controlled",
+    "Bluetooth Speed Control",
+    "Staircase Detection Robot",
+    "Tilt Tracking Using IMU",
+    "Voice Controlled Robot",
+    "Shape Forming Robot",
+    "ObstacleAlert Robot",
+    "Humidity Monitoring Robo",
+    "Smoke Detecting Robot",
+  ];
+
+  const intermediateItems = [
+    "Obstacle Based Speed Control",
+    "Obstacle Detection Using IR Sensor",
+    "Human Following Robot",
+    "Temperature Monitoring Robot",
+    "Computer Operated Chelonia",
+    "Wall Follow Robot",
+    "Alert System Using Tag",
+    "Gas Detecting Robo",
+    "Teleoperated Control Using Mobile Application",
+    "Line Following Robot",
+    "Clap Robo",
+  ];
+
+  const advancedItems = [
+    "Obstacle Avoidance Robo (Ultrasonic Sensor)",
+    "Maze Solving Robot",
+    "Mobile Tilt Controlled Chelonia Bot",
+    "Robot Using Mobile Arrows",
+  ];
+
+  const renderList = (items) => (
+    <div className="cm-list-grid">
+      <div className="cm-list-left">
+        {items.map((it, i) => (
+          <a
+            key={i}
+            className="cm-item-link"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo(itemRefs.current[it]);
+            }}
+          >
+            {it}
+          </a>
+        ))}
+      </div>
+      <div className="cm-list-right">
+        {items.map((_, i) => (
+          <a
+            key={i}
+            className="cm-sample-link"
+            href="#"
+            onClick={(e) => e.preventDefault()}
+          >
+            Sample Code
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="cm-page">
+      <div ref={topRef} />
+      <div className="cm-wrapper">
+        {/* Top navigation */}
+        <div className="cm-bar cm-bar-setup">Setup</div>
+        <div className="cm-setup-links">
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Overview"])}>
+            Overview
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Getting Started"])}>
+            Getting Started
+          </button>
+        </div>
+
+        {/* Lists */}
+        <div className="cm-bar cm-bar-beginner">Beginner</div>
+        {renderList(beginnerItems)}
+
+        <div className="cm-bar cm-bar-intermediate">Intermediate</div>
+        {renderList(intermediateItems)}
+
+        <div className="cm-bar cm-bar-advanced">Advanced</div>
+        {renderList(advancedItems)}
+
+        {/* Content Sections */}
+        <div className="cm-content-area">
+          {Object.keys(contentMap).map((key, idx) => (
+            <div className="cm-content-section" key={idx} ref={itemRefs.current[key]}>
+              <h2 className="cm-content-title">{key}</h2>
+              {contentMap[key].content}
+              <img
+                src={topArrow}
+                alt="Back to Top"
+                onClick={() => scrollTo(topRef)}
+                style={{ cursor: "pointer", width: "40px", height: "40px" }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Straight Line Stacking Blocks
+Shape Forming Robot
+Drawing Robot
+Switch Controlled Robot
+Keyboard Controlled Robot Using ROS
+Wireless Controlled Robot Using Python Program
+ROS Based Joystick Controller
+Surveillance Camera Using ROS
+Teleoperation Using Camera Feedback in ROS
+Human Following Robot Using ROS
+ROS Based Master Slave Control
+Shape Path Clearing Robot Using ROS
+Obstacle Based Speed Control Using ROS
+Moving Obstacle Avoidance Using ROS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useRef } from "react";
+import "./B1Experiment.css";
+import topArrow from "../assets/uparrow.png";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+export default function Cancero() {
+  const topRef = useRef(null); // Top reference for scroll-to-top
+
+  // Centralized content map
+  const contentMap = {
+    Features: {
+      type: "section",
+      content: (
+        <>
+    <ul>
+        <li><b>Diverse Sensor Integration:</b>
+            <ul>
+                <li>The Scorpion Robot Version includes a comprehensive set of sensors, such as ultrasonic sensors for accurate distance measurement, inertial measurement units (IMUs) for orientation tracking.</li>
+            </ul>
+        </li>
+        <li><b>Versatile Motor Control:</b>
+            <ul>
+                <li>The robot is equipped with a robust motor control system, allowing users to program precise movements. Motor pins are clearly defined, making it easy to understand and experiment with forward, backward, left, and right movements.</li>
+            </ul>
+        </li>
+        <li><b>Bluetooth Connectivity:</b>
+            <ul>
+                <li>Utilize Bluetooth communication to control the Scorpion Robot remotely. Commands can be sent through a Bluetooth module, providing wireless flexibility and enabling users to experiment with different control mechanisms.</li>
+            </ul>
+        </li>
+        <li><b>Educational Platform:</b>
+            <ul>
+                <li>Tailored for educational purposes, the Scorpion Robot Version is an ideal tool for students and enthusiasts to delve into the world of robotics. The robot facilitates hands-on learning, fostering a deeper understanding of robotic systems and programming.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>SAFETY PRECAUTIONS</h2>
+    <ol>
+        <li><b>Workspace Safety</b>
+            <ul>
+                <li>Keep your workspace tidy and well-lit to avoid accidents.</li>
+                <li>Ensure proper ventilation, especially when soldering or using adhesives.</li>
+                <li>Avoid working near flammable materials.</li>
+            </ul>
+        </li>
+        <li><b>Electrical Safety</b>
+            <ul>
+                <li>Always disconnect the circuit from power before making changes or adjustments.</li>
+                <li>Use low-voltage power supplies (below 12V) for hobby projects whenever possible to minimize risk.</li>
+                <li>Check wires and components for damage before use to prevent short circuits.</li>
+            </ul>
+        </li>
+        <li><b>Handling Tools and Components</b>
+            <ul>
+                <li>Use insulated tools for working with electronic circuits to avoid accidental shocks.</li>
+                <li>Handle components carefully to avoid bending leads or damaging delicate parts.</li>
+                <li>Avoid applying excessive force when inserting or removing components from breadboards or PCBs.</li>
+            </ul>
+        </li>
+        <li><b>Soldering Safety</b>
+            <ul>
+                <li>Wear safety goggles to protect your eyes from solder splatter.</li>
+                <li>Use a soldering iron stand and avoid touching the iron’s heated parts.</li>
+                <li>Work in a well-ventilated area or use a fume extractor to avoid inhaling fumes.</li>
+            </ul>
+        </li>
+        <li><b>Battery and Power Safety</b>
+            <ul>
+                <li>Use only recommended battery types and capacities for your project.</li>
+                <li>Do not short-circuit batteries, and avoid exposing them to heat or punctures.</li>
+                <li>Dispose of batteries responsibly and according to local regulations.</li>
+            </ul>
+        </li>
+        <li><b>Circuit Testing</b>
+            <ul>
+                <li>Double-check connections before powering the circuit to prevent shorts or component damage.</li>
+                <li>Use a multimeter to verify voltages and currents before powering sensitive components.</li>
+                <li>Start testing at low power and gradually increase if needed.</li>
+            </ul>
+        </li>
+        <li><b>Personal Safety</b>
+            <ul>
+                <li>Avoid working on electronics with wet hands or in damp conditions.</li>
+                <li>Keep loose clothing, jewelry, and long hair away from moving parts or exposed circuits.</li>
+                <li>If something feels hot or smells burnt, turn off power immediately and inspect the circuit.</li>
+            </ul>
+        </li>
+        <li><b>Component Safety</b>
+            <ul>
+                <li>Be aware of the polarity of components like LEDs, capacitors, and diodes to avoid damage.</li>
+                <li>Handle ICs and other sensitive components by their edges to prevent static damage.</li>
+                <li>Store components in anti-static bags or containers when not in use.</li>
+            </ul>
+        </li>
+        <li><b>Fire Prevention</b>
+            <ul>
+                <li>Keep a small fire extinguisher or fire blanket nearby, especially if working with soldering or batteries.</li>
+                <li>Never leave soldering irons, heat guns, or other tools unattended when powered on.</li>
+            </ul>
+        </li>
+        <li><b>Emergency Preparedness</b>
+            <ul>
+                <li>Know how to disconnect power quickly in case of a malfunction.</li>
+                <li>Keep first aid supplies nearby in case of minor burns or cuts.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>KIT CONTENTS</h2>
+    <h3>1. Core Electronics</h3>
+    <ul>
+        <li>Arduino Mega 2560: High-performance microcontroller for versatile robotics and electronics projects.</li>
+        <li>Motor Driver Module: L298N or similar, to control motors effectively.</li>
+    </ul>
+
+    <h3>2. Actuators</h3>
+    <ul>
+        <li>BO Motors with Metal Gears: Durable and efficient motors for driving wheels (quantity as required).</li>
+        <li>Wheels: Compatible with BO motors, with appropriate grip and size for the project.</li>
+    </ul>
+
+    <h3>3. Sensors</h3>
+    <ul>
+        <li>Ultrasonic Sensor: HC-SR04 for distance measurement and obstacle detection.</li>
+        <li>Infrared (IR) Sensor: For line-following or proximity sensing.</li>
+        <li>Gas Sensor: MQ series sensor for detecting gases like LPG, CO, or smoke.</li>
+        <li>Temperature Sensor: DHT11, DHT22, or LM35 for environmental temperature readings.</li>
+    </ul>
+
+    <h3>4. Power Components</h3>
+    <ul>
+        <li>12V Battery: Rechargeable battery for powering the project.</li>
+        <li>Arduino Power Cable: USB cable for programming and powering the Arduino board.</li>
+        <li>Connectors: Battery connectors, jumper wires, and Dupont cables for reliable connections.</li>
+    </ul>
+
+    <h3>5. Structural Components</h3>
+    <ul>
+        <li>Base Plate: Rigid and durable base to mount the motors, sensors, and other components.</li>
+        <li>Clamps: Metal or plastic clamps for securing the motors and sensors.</li>
+        <li>Screws and Nuts: Assorted sizes for assembling the kit.</li>
+        <li>Spacers: For creating levels or spacing components appropriately.</li>
+    </ul>
+
+    <h3>6. Prototyping and Customization</h3>
+    <ul>
+        <li>PCB: General-purpose PCB for soldering and custom circuits.</li>
+        <li>Switch: On/off switch for the main power or specific components.</li>
+        <li>Wires: Assorted lengths and gauges for power and signal connections.</li>
+    </ul>
+        </>
+      ),
+    },
+    "Quick star guide": {
+      type: "section",
+      content: (
+        <>
+   <h2>Hardware Assembly</h2>
+    
+
+    <h3>Components</h3>
+    <p>Ensure you have the following components ready for the Scorpion hardware assembly:</p>
+    <ul>
+        <li>Teensy 4.0</li>
+        <li>L298N Motor Driver</li>
+        <li>DC Motors (2)</li>
+        <li>Wheels (2)</li>
+        <li>Battery</li>
+        <li>Connectors</li>
+        <li>Ultrasonic sensor</li>
+        <li>Level shifter</li>
+        <li>IMU MPU6050</li>
+        <li>PCB</li>
+    </ul>
+
+    <h3>Assembly Steps</h3>
+    <p>Follow the steps below to complete the Scorpion hardware assembly:</p>
+    <ol>
+        <li><b>DC Motor and Wheel Connection:</b>
+            <ul>
+                <li>Connect each DC motor to the corresponding output terminals of the L298N Motor Driver.</li>
+                <li>Attach the wheels securely to the motor shafts.</li>
+                <li>There is already a proper connector in place to connect the motor and its driver pin to the PCB, which helps the user avoid any connection faults.</li>
+            </ul>
+        </li>
+        <li><b>Battery Connection:</b>
+            <ul>
+                <li>Connect the battery to the power input terminals of the L298N Motor Driver.</li>
+                <li>Ensure correct polarity to avoid damage.</li>
+            </ul>
+        </li>
+        <li><b>Wiring Check:</b>
+            <ul>
+                <li>Verify all connections, ensuring there are no loose wires or incorrect placements.</li>
+                <li>Double-check the connection diagram for reference.</li>
+            </ul>
+        </li>
+        <li><b>Power-Up and Testing:</b>
+            <ul>
+                <li>Power up the Scorpion by turning on the battery.</li>
+                <li>Ensure the Teensy 4.0 and L298N Motor Driver receive power.</li>
+                <li>To test the hardware assembly, execute the code for the desired experiment on the Teensy 4.0.</li>
+                <li>Observe the movement of the wheels and ensure they respond appropriately to the code instructions.</li>
+            </ul>
+        </li>
+        <li><b>Programming Connection:</b>
+            <ul>
+                <li>During programming, disconnect the 5V line from the L298N Motor Driver to the Teensy 4.0.</li>
+                <li>Connect the necessary programming pins based on the experiment requirements.</li>
+            </ul>
+        </li>
+        <li><b>Post-Programming Power-Up:</b>
+            <ul>
+                <li>After programming, reconnect the 5V line from the L298N Motor Driver to the Teensy 4.0 for normal operation.</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="note">
+        <p><b>Note:</b> The ENA (Enable A) and ENB (Enable B) pins are not explicitly mentioned in the code, which implies that they are shorted internally. To ensure proper functionality, physically shorten the ENA and ENB pins on the motor driver. This connection is necessary for the correct operation of the code. If these pins are not shorted, the code may not function as expected.</p>
+    </div>
+
+    <h2>Software Installation (Arduino IDE)</h2>
+    <p>This section will help you to install the Arduino IDE software for programming.</p>
+    <ol>
+        <li>Go to the website <a href="http://www.arduino.cc" target="_blank">www.arduino.cc</a> to download the software. </li>
+        <li>Click on the “windows installer” icon from the bottom of the site.</li>
+        <li>Begin the download by click “just download” option.</li>
+        <li>Extract the zip file and start the installation.</li>
+        <li>Select the installation options.</li>
+        <li>Choose the installation path.</li>
+        <li>Finish the installation.</li>
+        <li>Launch the Arduino IDE. </li>
+    </ol>
+
+    <h2>Connecting to Arduino IDE</h2>
+    <p>Follow the steps below to connect your Scorpion to the Arduino IDE:</p>
+    <ol>
+        <li><b>Connect the Cable:</b>
+            <ul>
+                <li>Connect the USB cable from your computer to the Teensy 4.0 on your Scorpion.</li>
+            </ul>
+        </li>
+        <li><b>Open Arduino IDE:</b>
+            <ul>
+                <li>Open the Arduino IDE software on your computer.</li>
+            </ul>
+        </li>
+        <li><b>Open New Sketch:</b>
+            <ul>
+                <li>In the Arduino IDE, open a new sketch (File -{">"} New).</li>
+            </ul>
+        </li>
+        <li><b>Board Selection:</b>
+            <ul>
+                <li>Select the Teensy 4.0 board from the Arduino IDE software (Tools -{">"} Board -{">"} Teensyduino -{">"} Teensy 4.0). For doubt please refer the link: <a href="https://www.youtube.com/watch?v=QdAuWOfOTE4&t=147s" target="_blank">Teensy Board Selection Video</a></li>
+            </ul>
+        </li>
+        <li><b>Load the Code:</b>
+            <ul>
+                <li>Copy and paste the code for the specific experiment into the new sketch.</li>
+            </ul>
+        </li>
+        <li><b>Verify the Code:</b>
+            <ul>
+                <li>Click on the "Verify" button (checkmark icon) to check the code for any errors.</li>
+            </ul>
+        </li>
+        <li><b>Upload the Code:</b>
+            <ul>
+                <li>Once the code verification is successful, click on the "Upload" button (right arrow icon) to upload the code to the Teensy board.</li>
+            </ul>
+        </li>
+        <li><b>Observe LED Blinking:</b>
+            <ul>
+                <li>During the uploading process, observe the LED on the Teensy 4.0. It should blink, indicating the data transfer.</li>
+            </ul>
+        </li>
+        <li><b>Remove the Connector:</b>
+            <ul>
+                <li>After successful uploading, safely disconnect the USB cable from the Teensy 4.0.</li>
+            </ul>
+        </li>
+        <li><b>Connect 5V from Driver to Teensy:</b>
+            <ul>
+                <li>Prior to powering up the Scorpion, reconnect the 5V line from the L298N Motor Driver to the Teensy 4.0.</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="important-note">
+        <p><b>Important Note:</b> Before proceeding with any power-up activities, it is crucial to ensure the reliability of your Scorpion's wiring. Perform the following essential steps:</p>
+        <ul>
+            <li><b>Multimeter Continuity Check:</b>
+                <ul>
+                    <li>Use a multimeter to check the continuity of each wire. Verify that there are no breaks or interruptions in the wiring. This step is essential for preventing potential issues related to poor electrical connectivity. </li>
+                </ul>
+            </li>
+            <li><b>Double-Check All Connections:</b>
+                <ul>
+                    <li>Thoroughly inspect all connections to guarantee that each component is securely and correctly attached. Pay special attention to junctions, joints, and interfaces between different modules. Any loose or incorrectly connected components could lead to operational errors or malfunctions.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>These precautionary measures ensure a robust and reliable hardware setup, minimizing the risk of electrical faults during the operation of your Scorpion.</p>
+    </div>
+
+    <h2>Software Setup (Raspberry Pi OS)</h2>
+    <h3>Raspberry Pi OS Installation setup in PC</h3>
+    <ol>
+        <li><b>Download and install RPI-IMAGER</b>
+            <p>‘Rpi-imager’ is the tool used for flashing the OS image onto the micro-SD card.</p>
+            <p>Install ‘rpi-imager’ using the following command in the terminal:</p>
+            <code>sudo apt install rpi-imager</code>
+            <p>or</p>
+            <code>sudo snap install rpi-imager</code>
+            <p><b>Reference Link:</b> <a href="https://snapcraft.io/install/rpi-imager/ubuntu" target="_blank">https://snapcraft.io/install/rpi-imager/ubuntu</a> </p>
+        </li>
+        <li><b>Getting Started (YouTube Link)</b>
+            <p> [Placeholder for YouTube link] </p>
+        </li>
+    </ol>
+        </>
+      ),
+    },
+    "Setting Up a Raspberry Pi4 with Ubuntu 20.04 Server": {
+      type: "experiment",
+      content: (
+        <>
+     <h2>Setting Up Raspberry Pi 4 with Ubuntu 20.04 Server</h2>
+    
+
+    <h3>1. Gather Required Materials</h3>
+    <ul>
+        <li>Raspberry Pi 4 (with power supply)</li>
+        <li>microSD card (at least 16GB recommended)</li>
+        <li>Card reader (to connect the microSD card to your PC)</li>
+        <li>Computer with internet access</li>
+        <li>HDMI cable (to connect Raspberry Pi to a monitor)</li>
+        <li>USB keyboard and mouse (for initial setup)</li>
+    </ul>
+
+    <h3>2. Download Ubuntu 20.04 Server</h3>
+    <ul>
+        <li>Visit the official Ubuntu website.</li>
+        <li>Select the Ubuntu 20.04 Server image for Raspberry Pi.</li>
+    </ul>
+
+    <h3>3. Prepare the microSD Card</h3>
+    
+    <ul>
+        <li>Insert the microSD card into the card reader and connect it to your computer.</li>
+        <li>Use software to flash the Ubuntu image onto the microSD card. You can use one of the following tools:
+            <ul>
+                <li><b>Raspberry Pi Imager (recommended):</b>
+                    <ol>
+                        <li>Download and install Raspberry Pi Imager.</li>
+                        <li>Open the application and select CHOOSE OS.</li>
+                        <li>Scroll down and select Ubuntu {">"} Ubuntu Server 20.04 LTS (ARM version).</li>
+                        <li>Select CHOOSE STORAGE and pick your microSD card.</li>
+                    </ol>
+                </li>
+                <li><b>balenaEtcher:</b>
+                    <ol>
+                        <li>Download and install balenaEtcher.</li>
+                        <li>Open the application and select the downloaded .img file.</li>
+                        <li>Choose the microSD card as the target.</li>
+                        <li>Click Flash to start the process.</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>4. Set Up the Raspberry Pi</h3>
+    <ul>
+        <li>Once the flashing is complete, safely eject the microSD card from your computer and insert it into the Raspberry Pi.</li>
+        <li>Connect the Raspberry Pi to a monitor using an HDMI cable.</li>
+        <li>Connect the USB keyboard.</li>
+        <li>Finally, connect the power supply to boot up the Raspberry Pi.</li>
+        <li>You can log in with the default credentials:
+            <code>Username: ubuntu</code>
+            <code>Password: ubuntu</code>
+        </li>
+        <li class="note">Upon first login, you’ll be prompted to change the password.</li>
+    </ul>
+        </>
+      ),
+    },
+    "Configuring  Wi-Fi on Ubuntu Server with a Monitor": {
+      type: "experiment",
+      content: (
+        <>
+    <h2>Setting Up Raspberry Pi 4 with Ubuntu 20.04 Server</h2>
+    
+
+    <h3>1. Gather Required Materials</h3>
+    <ul>
+        <li>Raspberry Pi 4 (with power supply)</li>
+        <li>microSD card (at least 16GB recommended)</li>
+        <li>Card reader (to connect the microSD card to your PC)</li>
+        <li>Computer with internet access</li>
+        <li>HDMI cable (to connect Raspberry Pi to a monitor)</li>
+        <li>USB keyboard and mouse (for initial setup)</li>
+    </ul>
+
+    <h3>2. Download Ubuntu 20.04 Server</h3>
+    <ul>
+        <li>Visit the official Ubuntu website.</li>
+        <li>Select the Ubuntu 20.04 Server image for Raspberry Pi.</li>
+    </ul>
+
+    <h3>3. Prepare the microSD Card</h3>
+    
+    <ul>
+        <li>Insert the microSD card into the card reader and connect it to your computer.</li>
+        <li>Use software to flash the Ubuntu image onto the microSD card. You can use one of the following tools:
+            <ul>
+                <li><b>Raspberry Pi Imager (recommended):</b>
+                    <ol>
+                        <li>Download and install Raspberry Pi Imager.</li>
+                        <li>Open the application and select CHOOSE OS.</li>
+                        <li>Scroll down and select Ubuntu {">"} Ubuntu Server 20.04 LTS (ARM version).</li>
+                        <li>Select CHOOSE STORAGE and pick your microSD card.</li>
+                    </ol>
+                </li>
+                <li><b>balenaEtcher:</b>
+                    <ol>
+                        <li>Download and install balenaEtcher.</li>
+                        <li>Open the application and select the downloaded .img file.</li>
+                        <li>Choose the microSD card as the target.</li>
+                        <li>Click Flash to start the process.</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>4. Set Up the Raspberry Pi</h3>
+    <ul>
+        <li>Once the flashing is complete, safely eject the microSD card from your computer and insert it into the Raspberry Pi.</li>
+        <li>Connect the Raspberry Pi to a monitor using an HDMI cable.</li>
+        <li>Connect the USB keyboard.</li>
+        <li>Finally, connect the power supply to boot up the Raspberry Pi.</li>
+        <li>You can log in with the default credentials:
+            <code>Username: ubuntu</code>
+            <code>Password: ubuntu</code>
+        </li>
+        <li class="note">Upon first login, you’ll be prompted to change the password.</li>
+    </ul>
+
+    <h2>Configuring Wi-Fi on Ubuntu Server</h2>
+    
+    <ol>
+        <li><b>Access the Terminal</b>
+            <p>If you are at the terminal screen after booting, log in with your credentials (default is <b>ubuntu</b> for both username and password if you haven’t changed it).</p>
+        </li>
+        <li><b>Identify Your Wi-Fi Interface</b>
+            <p>Use the following command to identify the Wi-Fi interface:</p>
+            <code>ip a</code>
+            <p>Look for an interface named something like <code>wlan0</code>.</p>
+        </li>
+        <li><b>Edit the Netplan Configuration File</b>
+            <p>Open the Netplan configuration file with a text editor:</p>
+            <code>cd /etc/netplan/</code>
+            <code>sudo nano /etc/netplan/50-cloud-init.yaml</code>
+            <p>(Note: I've suggested <code>nano</code> as it's a common text editor. The file name might vary slightly.)</p>
+        </li>
+        <li><b>Modify the Configuration</b>
+            <p>In the file, add your Wi-Fi configuration. An example structure is below. Make sure to replace <code>YOUR_SSID</code> and <code>YOUR_PASSWORD</code> with your actual Wi-Fi details. Pay close attention to the indentation, as YAML is sensitive to it.</p>
+            <div class="yaml-code">
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    wifis:
+        wlan0:
+            dhcp4: true
+            optional: true
+            access-points:
+                "YOUR_SSID":
+                    password: "YOUR_PASSWORD"
+    version: 2
+            </div>
+        </li>
+        <li><b>Apply the Configuration</b>
+            <p>After editing, save the file (in <code>nano</code>, press <b>Ctrl + O</b>, then <b>Enter</b>) and exit (<b>Ctrl + X</b>).</p>
+            <p>Apply the configuration using:</p>
+            <code>sudo netplan apply</code>
+        </li>
+        <li><b>Verify the Connection</b>
+            <p>Check if your Wi-Fi connection is active:</p>
+            <code>ip a</code>
+            <p>You should see an IP address assigned to <code>wlan0</code>.</p>
+            <p>To confirm internet connectivity, you can ping a website:</p>
+            <code>ping -c 4 google.com</code>
+        </li>
+        <li><b>Reboot (Optional)</b>
+            <p>If everything seems correct but you still face issues, you can reboot your Raspberry Pi:</p>
+            <code>sudo reboot</code>
+        </li>
+    </ol>
+    <div class="note">
+        <p><b>Editor Controls (for <code>nano</code>):</b></p>
+        <ul>
+            <li><b>Ctrl + O</b> – Save the content.</li>
+            <li><b>Ctrl + X</b> – Close the editor.</li>
+        </ul>
+        <p>Look out for the indentation of the lines in the <code>.yaml</code> file! It is very important.</p>
+    </div>
+        </>
+      ),
+    },
+    "ROS installation": {
+      type: "experiment",
+      content: (
+        <>
+    <h2>Setting Up Raspberry Pi 4 with Ubuntu 20.04 Server</h2>
+    
+
+    <h3>1. Gather Required Materials</h3>
+    <ul>
+        <li>Raspberry Pi 4 (with power supply)</li>
+        <li>microSD card (at least 16GB recommended)</li>
+        <li>Card reader (to connect the microSD card to your PC)</li>
+        <li>Computer with internet access</li>
+        <li>HDMI cable (to connect Raspberry Pi to a monitor)</li>
+        <li>USB keyboard and mouse (for initial setup)</li>
+    </ul>
+
+    <h3>2. Download Ubuntu 20.04 Server</h3>
+    <ul>
+        <li>Visit the official Ubuntu website.</li>
+        <li>Select the Ubuntu 20.04 Server image for Raspberry Pi.</li>
+    </ul>
+
+    <h3>3. Prepare the microSD Card</h3>
+    
+    <ul>
+        <li>Insert the microSD card into the card reader and connect it to your computer.</li>
+        <li>Use software to flash the Ubuntu image onto the microSD card. You can use one of the following tools:
+            <ul>
+                <li><b>Raspberry Pi Imager (recommended):</b>
+                    <ol>
+                        <li>Download and install Raspberry Pi Imager.</li>
+                        <li>Open the application and select CHOOSE OS.</li>
+                        <li>Scroll down and select Ubuntu {">"} Ubuntu Server 20.04 LTS (ARM version).</li>
+                        <li>Select CHOOSE STORAGE and pick your microSD card.</li>
+                    </ol>
+                </li>
+                <li><b>balenaEtcher:</b>
+                    <ol>
+                        <li>Download and install balenaEtcher.</li>
+                        <li>Open the application and select the downloaded .img file.</li>
+                        <li>Choose the microSD card as the target.</li>
+                        <li>Click Flash to start the process.</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>4. Set Up the Raspberry Pi</h3>
+    <ul>
+        <li>Once the flashing is complete, safely eject the microSD card from your computer and insert it into the Raspberry Pi.</li>
+        <li>Connect the Raspberry Pi to a monitor using an HDMI cable.</li>
+        <li>Connect the USB keyboard.</li>
+        <li>Finally, connect the power supply to boot up the Raspberry Pi.</li>
+        <li>You can log in with the default credentials:
+            <code>Username: ubuntu</code>
+            <code>Password: ubuntu</code>
+        </li>
+        <li class="note">Upon first login, you’ll be prompted to change the password.</li>
+    </ul>
+
+    <h2>Configuring Wi-Fi on Ubuntu Server</h2>
+    
+    <ol>
+        <li><b>Access the Terminal</b>
+            <p>If you are at the terminal screen after booting, log in with your credentials (default is <b>ubuntu</b> for both username and password if you haven’t changed it).</p>
+        </li>
+        <li><b>Identify Your Wi-Fi Interface</b>
+            <p>Use the following command to identify the Wi-Fi interface:</p>
+            <code>ip a</code>
+            <p>Look for an interface named something like <code>wlan0</code>.</p>
+        </li>
+        <li><b>Edit the Netplan Configuration File</b>
+            <p>Open the Netplan configuration file with a text editor:</p>
+            <code>cd /etc/netplan/</code>
+            <code>sudo nano /etc/netplan/50-cloud-init.yaml</code>
+            <p>(Note: I've suggested <code>nano</code> as it's a common text editor. The file name might vary slightly.)</p>
+        </li>
+        <li><b>Modify the Configuration</b>
+            <p>In the file, add your Wi-Fi configuration. An example structure is below. Make sure to replace <code>YOUR_SSID</code> and <code>YOUR_PASSWORD</code> with your actual Wi-Fi details. Pay close attention to the indentation, as YAML is sensitive to it.</p>
+            <div class="yaml-code">
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    wifis:
+        wlan0:
+            dhcp4: true
+            optional: true
+            access-points:
+                "YOUR_SSID":
+                    password: "YOUR_PASSWORD"
+    version: 2
+            </div>
+        </li>
+        <li><b>Apply the Configuration</b>
+            <p>After editing, save the file (in <code>nano</code>, press <b>Ctrl + O</b>, then <b>Enter</b>) and exit (<b>Ctrl + X</b>).</p>
+            <p>Apply the configuration using:</p>
+            <code>sudo netplan apply</code>
+        </li>
+        <li><b>Verify the Connection</b>
+            <p>Check if your Wi-Fi connection is active:</p>
+            <code>ip a</code>
+            <p>You should see an IP address assigned to <code>wlan0</code>.</p>
+            <p>To confirm internet connectivity, you can ping a website:</p>
+            <code>ping -c 4 google.com</code>
+        </li>
+        <li><b>Reboot (Optional)</b>
+            <p>If everything seems correct but you still face issues, you can reboot your Raspberry Pi:</p>
+            <code>sudo reboot</code>
+        </li>
+    </ol>
+    <div class="note">
+        <p><b>Editor Controls (for <code>nano</code>):</b></p>
+        <ul>
+            <li><b>Ctrl + O</b> – Save the content.</li>
+            <li><b>Ctrl + X</b> – Close the editor.</li>
+        </ul>
+        <p>Look out for the indentation of the lines in the <code>.yaml</code> file! It is very important.</p>
+    </div>
+
+    <h2>ROS Noetic Installation</h2>
+    
+    <p><b>Documentation:</b> <a href="https://wiki.ros.org/Documentation" target="_blank">https://wiki.ros.org/Documentation</a></p>
+    <p><b>Linorobot package:</b> <a href="https://github.com/linorobot/linorobot" target="_blank">https://github.com/linorobot/linorobot</a></p>
+
+    <h3>1. Configure your Ubuntu repositories</h3>
+    <p>Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the <a href="https://help.ubuntu.com/community/Repositories/Ubuntu" target="_blank">Ubuntu guide</a> for instructions on doing this.</p>
+
+    <h3>2. Setup your sources.list</h3>
+    <p>Set up your computer to accept software from packages.ros.org.</p>
+    <code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" {">"} /etc/apt/sources.list.d/ros-latest.list'</code>
+
+    <h3>3. Set up your keys</h3>
+    <code>sudo apt install curl  if you haven't already installed curl</code>
+    <code>curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -</code>
+
+    <h3>4. Installation</h3>
+    <p>First, make sure your Debian package index is up-to-date:</p>
+    <code>sudo apt update</code>
+    <p>Now pick how much of ROS you would like to install.</p>
+    <p><b>Desktop-Full Install: (Recommended)</b> : Everything in Desktop plus 2D/3D simulators and 2D/3D perception packages</p>
+    <code>sudo apt install ros-noetic-desktop-full</code>
+
+    <h3>5. Environment setup</h3>
+    <p>You must source this script in every bash terminal you use ROS in.</p>
+    <code>source /opt/ros/noetic/setup.bash</code>
+    <p>It can be convenient to automatically source this script every time a new shell is launched. These commands will do that for you (for Bash):</p>
+    <code>echo "source /opt/ros/noetic/setup.bash" {">"}{">"} ~/.bashrc</code>
+    <code>source ~/.bashrc</code>
+
+    <h3>6. Dependencies for building packages</h3>
+    <p>To create and manage your own ROS workspaces, there are various tools and requirements that are distributed separately. To install these tools and other dependencies for building ROS packages, run:</p>
+    <code>sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential</code>
+
+    <h3>7. Initialize rosdep</h3>
+    <p>Before  you can use many ROS tools, you will need to initialize rosdep. If you have not yet installed rosdep, do so as follows.</p>
+    <code>sudo apt install python3-rosdep</code>
+    <p>With the following, you can initialize rosdep.</p>
+    <code>sudo rosdep init</code>
+    <code>rosdep update</code>
+        </>
+      ),
+    },
+    "Installing Platform IO on Ubuntu Server 20.04": {
+      type: "experiment",
+      content: (
+        <>
+   <h2>ROS Noetic Installation</h2>
+    
+    <p><b>Documentation:</b> <a href="https://wiki.ros.org/Documentation" target="_blank">https://wiki.ros.org/Documentation</a></p>
+    <p><b>Linorobot package:</b> <a href="https://github.com/linorobot/linorobot" target="_blank">https://github.com/linorobot/linorobot</a></p>
+
+    <h3>1. Configure your Ubuntu repositories</h3>
+    <p>Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the <a href="https://help.ubuntu.com/community/Repositories/Ubuntu" target="_blank">Ubuntu guide</a> for instructions on doing this.</p>
+
+    <h3>2. Setup your sources.list</h3>
+    <p>Set up your computer to accept software from packages.ros.org.</p>
+    <code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" {">"} /etc/apt/sources.list.d/ros-latest.list'</code>
+
+    <h3>3. Set up your keys</h3>
+    <code>sudo apt install curl  if you haven't already installed curl</code>
+    <code>curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -</code>
+
+    <h3>4. Installation</h3>
+    <p>First, make sure your Debian package index is up-to-date:</p>
+    <code>sudo apt update</code>
+    <p>Now pick how much of ROS you would like to install.</p>
+    <p><b>Desktop-Full Install: (Recommended)</b> : Everything in Desktop plus 2D/3D simulators and 2D/3D perception packages</p>
+    <code>sudo apt install ros-noetic-desktop-full</code>
+
+    <h3>5. Environment setup</h3>
+    <p>You must source this script in every bash terminal you use ROS in.</p>
+    <code>source /opt/ros/noetic/setup.bash</code>
+    <p>It can be convenient to automatically source this script every time a new shell is launched. These commands will do that for you (for Bash):</p>
+    <code>echo "source /opt/ros/noetic/setup.bash" {">"}{">"} ~/.bashrc</code>
+    <code>source ~/.bashrc</code>
+
+    <h3>6. Dependencies for building packages</h3>
+    <p>To create and manage your own ROS workspaces, there are various tools and requirements that are distributed separately. For example, rosinstall is a frequently used command-line tool that enables you to easily download many source trees for ROS packages with one command.</p>
+    <p>To install this tool and other dependencies for building ROS packages, run:</p>
+    <code>sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential</code>
+
+    <h3>7. Initialize rosdep</h3>
+    <p>Before you can use many ROS tools, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS. If you have not yet installed rosdep, do so as follows.</p>
+    <code>sudo apt install python3-rosdep</code>
+    <p>With the following, you can initialize rosdep.</p>
+    <code>sudo rosdep init</code>
+    <code>rosdep update</code>
+        </>
+      ),
+    },
+        "Firmware Installation Setup": {
+      type: "experiment",
+      content: (
+        <>
+    <h2>Uploading Linorobot Firmware to Teensy with PlatformIO</h2>
+    
+    <ol>
+        <li><b>Download the Linorobot Package</b>
+            <p>Open a terminal and navigate to your desired directory.</p>
+            <p>Clone the Linorobot package repository:</p>
+            <code>git clone https://github.com/linorobot/linorobot.git</code>
+            <p>Change into the Linorobot directory:</p>
+            <code>cd linorobot</code>
+        </li>
+        <li><b>Navigate to the Firmware Folder</b>
+            <p>Locate the firmware directory inside the Linorobot package, where the Teensy code is stored:</p>
+            <code>cd firmware</code>
+        </li>
+        <li><b>Install PlatformIO Dependencies</b>
+            <p>Use PlatformIO to set up the required dependencies. Run the following command in the firmware directory:</p>
+            <code>platformio run</code>
+            <p>This will automatically download any required libraries specified in the <code>platformio.ini</code> file.</p>
+        </li>
+        <li><b>Connect the Teensy to Your Raspberry Pi</b>
+            <p>Connect your Teensy microcontroller to the Raspberry Pi via USB. Ensure that the Raspberry Pi recognizes it by checking with:</p>
+            <code>ls /dev/tty*</code>
+            <p>Look for a port like <code>/dev/ttyACM0</code> or similar.</p>
+        </li>
+        <li><b>Configure the PlatformIO Environment for Teensy</b>
+            <p>Open the <code>platformio.ini</code> file in the firmware folder to confirm the environment configuration for Teensy. Make sure it includes settings like:</p>
+            <div class="code-block">
+[env:teensy]
+platform = teensy
+board = teensy41   or your specific Teensy model
+framework = arduino
+upload_port = /dev/ttyACM0   Replace with the detected port
+            </div>
+        </li>
+        <li><b>Upload the Firmware to the Teensy</b>
+            <p>With everything configured, use PlatformIO to upload the firmware to the Teensy:</p>
+            <code>pio run –t upload</code>
+            <p>This will compile the code and upload it to the Teensy.</p>
+        </li>
+        <li><b>Verify the Upload</b>
+            <p>PlatformIO should display a success message once the code is uploaded. You can verify functionality through serial communication or by testing specific movements if connected to motors.</p>
+        </li>
+    </ol>
+        </>
+      ),
+    },
+        "ROS Setup": {
+      type: "experiment",
+      content: (
+        <>
+    <h2>Setting Up the ROS Workspace</h2>
+    <p>Follow these steps on your main computer (PC/laptop) to download the workspace and copy it to the Raspberry Pi.</p>
+    <ol>
+        <li><b>Download the Workspace File:</b>
+            <p>Download the workspace <code>.zip</code> or <code>.tar.gz</code> file from the provided link:</p>
+            <p><a href="[download link]" target="_blank">Instruction link: [download link]</a> (Replace '[download link]' with the actual URL)</p>
+        </li>
+        <li><b>Extract the File:</b>
+            <p>Extract the downloaded file to your home directory (<code>~/</code>).</p>
+            <p>Example for a <code>.zip</code> file:</p>
+            <code>unzip Scorpion_ws.zip -d ~/</code>
+            <p>Example for a <code>.tar.gz</code> file:</p>
+            <code>tar -xvzf Scorpion_ws.tar.gz -C ~/</code>
+            <p>This should create a folder named <code>Scorpion_ws</code> in your home directory.</p>
+        </li>
+        <li><b>Copy Workspace to Raspberry Pi:</b>
+            <p>Use the <code>scp</code> command to securely copy the entire <code>Scorpion_ws</code> folder to the Raspberry Pi's home directory. Open a terminal on your PC/laptop and run:</p>
+            <code>scp -r ~/Scorpion_ws &lt;username of raspberry pi&gt;@&lt;ipaddressofraspberry pi&gt;:~/</code>
+            <p>Replace <code>&lt;username of raspberry pi&gt;</code> with your Raspberry Pi's username (e.g., <code>ubuntu</code>) and <code>&lt;ipaddressofraspberry pi&gt;</code> with its IP address.</p>
+            <p>You might be prompted for the Raspberry Pi's password.</p>
+            <p>This command copies the <code>Scorpion_ws</code> directory recursively (<code>-r</code>) to the specified destination on the Raspberry Pi.</p>
+        </li>
+        <li><b>Source .bashrc on Raspberry Pi (Optional but Recommended):</b>
+            <p>After copying, it's often necessary to source the <code>.bashrc</code> file on the Raspberry Pi, especially if you added ROS environment setup lines earlier. You can do this the next time you SSH into the Pi, or run it immediately:</p>
+            <p>First, SSH into the Pi:</p>
+            <code>ssh &lt;username of raspberry pi&gt;@&lt;ipaddressofraspberry pi&gt;</code>
+            <p>Then, source the file:</p>
+            <code>source ~/.bashrc</code>
+        </li>
+    </ol>
+        </>
+      ),
+    },
+
+        "Transeferring the Working and Building with Catkin": {
+      type: "experiment",
+      content: (
+        <>
+        <h3>Part 1: Copy and Build Workspace on Raspberry Pi</h3>
+        <ol>
+            <li><b>Copy the Workspace from Local to Raspberry Pi</b>
+                <p>Download the workspace from the provided link. Open a terminal on your computer (where the workspace is located) and use <code>scp</code> to transfer the workspace to your Raspberry Pi. Replace <code>&lt;PATH_TO_WORKSPACE&gt;</code> with the path to your workspace on your local machine and <code>&lt;Raspberry_Pi_IP_Address&gt;</code> with your Pi’s IP address.</p>
+                <code>scp -r &lt;PATH_TO_WORKSPACE&gt;/scorpion_ws ubuntu@&lt;Raspberry_Pi_IP_Address&gt;:/home/ubuntu/</code>
+                <p>This command will recursively (<code>-r</code>) copy the <code>scorpion_ws</code> folder to the Raspberry Pi's <code>/home/ubuntu</code> directory.</p>
+            </li>
+            
+            <li><b>SSH into Your Raspberry Pi</b>
+                <p>Once the transfer is complete, SSH into your Raspberry Pi:</p>
+                <code>ssh ubuntu@&lt;Raspberry_Pi_IP_Address&gt;</code>
+            </li>
+            
+            <li><b>Navigate to the Workspace Directory</b>
+                <p>Go to the workspace folder that was just transferred.</p>
+                <code>cd /home/ubuntu/scorpion_ws</code>
+            </li>
+            
+            <li><b>Remove build and devel Directories</b>
+                <p>Use the following commands to delete the <code>build</code> and <code>devel</code> directories if they exist:</p>
+                <code>sudo rm -r build/ devel/</code>
+            </li>
+            
+            <li><b>Build the Workspace with catkin_make</b>
+                <p>Run <code>catkin_make</code> to build the workspace:</p>
+                <code>catkin_make</code>
+                <p>The command will compile and set up the packages within the workspace.</p>
+            </li>
+            
+            <li><b>Source the Workspace</b>
+                <p>Finally, source the workspace to make the packages accessible in your current shell session:</p>
+                <code>source devel/setup.bash</code>
+            </li>
+        </ol>
+
+        <h3>Part 2: Configure ROS Network (Master/Slave)</h3>
+        
+        <h4>Configure the .bashrc file of Raspberry Pi (ROS Master)</h4>
+        <ol>
+            <li>
+                <p>In your SSH session with the Raspberry Pi, edit the <code>.bashrc</code> file:</p>
+                <code>sudo nano ~/.bashrc</code>
+            </li>
+            <li>
+                <p>Add the following line at the end of the file. Replace <code>&lt;Ip of the raspberrypi&gt;</code> with your Pi's actual IP address.</p>
+                <code>export ROS_IP=&lt;Ip of the raspberrypi&gt;</code>
+            </li>
+            <li>
+                <p>After adding the line, save the file (<b>Ctrl + O</b>, then <b>Enter</b>) and close the editor (<b>Ctrl + X</b>).</p>
+            </li>
+            <li>
+                <p>Source the <code>.bashrc</code> file to apply the changes:</p>
+                <code>source ~/.bashrc</code>
+            </li>
+        </ol>
+
+        <h4>Configure the .bashrc file of the Laptop (ROS Slave)</h4>
+        <ol>
+            <li>
+                <p>Open a <b>new terminal on your laptop</b> (not on the Pi) and edit its <code>.bashrc</code> file:</p>
+                <code>sudo nano ~/.bashrc</code>
+            </li>
+            <li>
+                <p>Add the following two lines to the end of the file. Replace <code>&lt;Ip of the laptop&gt;</code> with your laptop's IP address and <code>&lt;ip of raspberry pi&gt;</code> with the Pi's IP address.</p>
+                <code>export ROS_IP=&lt;Ip of the laptop&gt;</code>
+                <code>export ROS_MASTER_URI=http://&lt;ip of raspberry pi&gt;:11311/</code>
+            </li>
+            <li>
+                <p>After adding the lines, save the file (<b>Ctrl + O</b>, then <b>Enter</b>) and close the editor (<b>Ctrl + X</b>).</p>
+            </li>
+            <li>
+                <p>Source the <code>.bashrc</code> file to apply the changes:</p>
+                <code>source ~/.bashrc</code>
+            </li>
+        </ol>
+        </>
+      ),
+    },
+    "Voice Control Robot with Gripper": {
+      type: "experiment",
+      content: (
+        <>
+          <p>Control speed of motors via Bluetooth commands.</p>
+          <ul>
+            <li>Step 1: Connect motor driver</li>
+            <li>Step 2: Implement speed commands</li>
+            <li>Step 3: Test varying speed levels</li>
+          </ul>
+        </>
+      ),
+    },
+    
+  };
+
+
+    const sampleCodeLinks = {
+
+  "Voice Control Robot with Gripper":"https://github.com/Megararobotics/Cancero/blob/main/Cancer_code.ino",
+  "Bluetooth Joystick Control Robot With Gripper":"https://github.com/Megararobotics/Cancero/blob/main/Exp2.ino",
+  "Blutooth-Controlled Robotic Vehicle with Gripper Control":"https://github.com/Megararobotics/Cancero/blob/main/Exp3.ino",
+  "Pick and Place Robot":"https://github.com/Megararobotics/Cancero/blob/main/Exp4.ino",
+  "Computer-Controlled Cancero Robot With Intergrater Gripper":"https://github.com/Megararobotics/Cancero/blob/main/Exp5.ino",
+  "Pushing Operation Using Cancero Robot":"https://github.com/Megararobotics/Cancero/blob/main/Exp6.ino",
+  "Straight-Line Stacking Experiment Robot":"https://github.com/Megararobotics/Cancero/blob/main/Exp7.ino",
+  "Clearing the Path By Moving Obstacles with Cancero Robot Arm":"https://github.com/Megararobotics/Cancero/blob/main/Exp8.ino",
+  "Automated Object Retrieval and Relocation System":"https://github.com/Megararobotics/Cancero/blob/main/Exp9.ino",
+  "Cancero Control Using Mobile App Terminal":"https://github.com/Megararobotics/Cancero/blob/main/Exp10.ino",
+  "Button-Controlled Robot for Precision Gripping Applications":"https://github.com/Megararobotics/Cancero/blob/main/Exp11.ino",
+  "Assembling Spread Objects with Cancer Robot":"https://github.com/Megararobotics/Cancero/blob/main/Exp12.ino",
+  "Pick and Drag Robot":"https://github.com/Megararobotics/Cancero/blob/main/Exp13.ino",
+  "Shape Path Clearing Robot Using ROS":"https://github.com/Megararobotics/Cancero/blob/main/Exp31.ino",
+
+  };
+    // Dynamically create refs for all items
+    const itemRefs = useRef(
+      Object.keys(contentMap).reduce((acc, key) => {
+        acc[key] = React.createRef();
+        return acc;
+      }, {})
+    );
+  
+    // Scroll function
+    const scrollTo = (ref) => {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+  // Navigation lists
+const beginnerItems = [
+  "Voice Control Robot with Gripper",
+  "Bluetooth Joystick Control Robot With Gripper",
+  "Blutooth-Controlled Robotic Vehicle with Gripper Control",
+  "Pick and Place Robot",
+  "Computer-Controlled Cancero Robot With Intergrater Gripper",
+  "Pushing Operation Using Cancero Robot",
+  "Straight-Line Stacking Experiment Robot",
+  "Clearing the Path By Moving Obstacles with Cancero Robot Arm",
+  "Automated Object Retrieval and Relocation System",
+  "Cancero Control Using Mobile App Terminal",
+  
+];
+
+const intermediateItems = [
+  "Button-Controlled Robot for Precision Gripping Applications",
+  "Assembling Spread Objects with Cancer Robot",
+  "Pick and Drag Robot",
+  "Keyboard Controlled Robot Using ROS",
+  "Wireless Controlled Robot Using Python Program",
+  "ROS Based Joystick Controller",
+  "Surveillance Camera Using ROS",
+  "Teleoperation Using Camera Feedback in ROS",
+  "Human Following Robot Using ROS",
+  "ROS Based Master Slave Control",
+];
+
+const advancedItems = [
+  "Shape Path Clearing Robot Using ROS",
+  "Obstacle Based Speed Control Using ROS",
+  "Moving Obstacle Avoidance Using ROS",
+  "Maze Solving Robot Using ROS",
+  "Python Programmed Terminal Controlled Robo Using a Mobile App",
+  "Staircase Detection Robot Using ROS",
+  "Python Programmed Voice Controlled Robo",
+  "Python Programmed Mobile Tilt Controlled Robo",
+  "Python Programmed Button Controlled Robot",
+  "Switch Controlled Robot with Gripper Functionality",
+];
+
+const renderList = (items, hasLinksCount = 0) => (
+  <div className="cm-list-grid">
+    <div className="cm-list-left">
+      {items.map((it, i) => (
+        <a
+          key={i}
+          className="cm-item-link"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo(itemRefs.current[it]);
+          }}
+        >
+          {it}
+        </a>
+      ))}
+    </div>
+    <div className="cm-list-right">
+      {items.map((it, i) => (
+        <a
+          key={i}
+          className="cm-sample-link"
+          href={i < hasLinksCount || hasLinksCount === -1 ? sampleCodeLinks[it] || "#" : "#"}
+          target={i < hasLinksCount || hasLinksCount === -1 ? "_blank" : undefined}
+          rel={i < hasLinksCount || hasLinksCount === -1 ? "noopener noreferrer" : undefined}
+        >
+          {i < hasLinksCount || hasLinksCount === -1 ? "Sample Code" : ""}
+        </a>
+      ))}
+    </div>
+  </div>
+);
+
+
+
+  return (
+    <div>
+        <Navbar/>
+    <div className="cm-page">
+      <div ref={topRef} />
+      <div className="cm-wrapper">
+        {/* Top navigation */}
+        <div className="cm-bar cm-bar-setup">Setup</div>
+        <div className="cm-setup-links">
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Features"])}>
+            Features
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Quick star guide"])}>
+            Quick star guide
+          </button>
+            <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Setting Up a Raspberry Pi4 with Ubuntu 20.04 Server"])}>
+            Setting Up a Raspberry Pi4 with Ubuntu 20.04 Server
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Configuring  Wi-Fi on Ubuntu Server with a Monitor"])}>
+            Configuring  Wi-Fi on Ubuntu Server with a Monitor
+          </button><button className="cm-link" onClick={() => scrollTo(itemRefs.current["Steps for SSH Access"])}>
+            Steps for SSH Access
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["ROS installation"])}>
+            ROS installation
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Installing Platform IO on Ubuntu Server 20.04"])}>
+            Installing Platform IO on Ubuntu Server 20.04
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Firmware Installation Setup"])}>
+            Firmware Installation Setup
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["ROS Setup"])}>
+            ROS Setup
+          </button>
+          <button className="cm-link" onClick={() => scrollTo(itemRefs.current["Transeferring the Working and Building with Catkin"])}>
+            Transeferring the Working and Building with Catkin
+          </button>
+
+        </div>
+
+        {/* Lists */}
+<div className="cm-bar cm-bar-beginner">Beginner</div>
+{renderList(beginnerItems, -1)} {/* -1 means all items have sample code */}
+
+<div className="cm-bar cm-bar-intermediate">Intermediate</div>
+{renderList(intermediateItems, 3)} {/* Only first 3 items have sample code */}
+
+<div className="cm-bar cm-bar-advanced">Advanced</div>
+{renderList(advancedItems, 1)} {/* No sample code for advanced items */}
+
+        {/* Content Sections */}
+        <div className="cm-content-area">
+          {Object.keys(contentMap).map((key, idx) => (
+            <div className="cm-content-section" key={idx} ref={itemRefs.current[key]}>
+              <h2 className="cm-content-title">{key}</h2>
+              {contentMap[key].content}
+<div className="top-separator">
+  <img
+    src={topArrow}
+    alt="Back to Top"
+    onClick={() => scrollTo(topRef)}
+    className="top-arrow"
+  />
+</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+<Footer/>
+
+    </div>
+  );
+}
+
+
+

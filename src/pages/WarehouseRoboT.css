@@ -1,0 +1,391 @@
+/* Whole section */
+.robot-section {
+  padding-top: 120px; /* more breathing space below navbar */
+  color: #123;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.robot-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') center/cover no-repeat;
+  filter: blur(8px) opacity(0.25);
+  z-index: -1;
+}
+
+/* Header */
+.robot-header h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0a2a8b;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* First row */
+.robot-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+.robot-image img {
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.robot-content {
+  flex: 1;
+  max-width: 650px;
+  padding: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a1a2e;
+}
+
+.robot-content ul {
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+.robot-content li {
+  margin-bottom: 15px;
+}
+
+/* Second row */
+.robot-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+.robot-features {
+  flex: 1;
+  max-width: 650px;
+  padding: 20px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.robot-features h3 {
+  margin: 25px 0 15px;
+  font-size: 1.4rem;
+  color: #0a2a8b;
+  font-weight: 700;
+}
+
+/* Specs Section */
+.specs-section {
+  position: relative;
+  text-align: center;
+  color: #1a2a57;
+  overflow: hidden;
+  padding: 60px 30px;
+  background: #f8faff;
+  border-radius: 20px;
+}
+
+/* Title */
+.specs-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #0a2a8b;
+}
+
+/* Two-column layout */
+.specs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+/* Left column (list) */
+.specs-list {
+  flex: 1;
+  list-style-type: disc;
+  padding-left: 25px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.specs-list li {
+  margin-bottom: 12px;
+}
+
+/* Image animation */
+.specs-image {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-in-out;
+  width: 100%;
+  max-width: 420px;
+
+}
+
+.specs-image.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Buttons */
+.specs-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d5adb, #093f9a);
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0b4ec4, #082f7a);
+}
+
+/* Vision & Mission */
+.vision-mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.vision-mission-box {
+  background: linear-gradient(135deg, #0d73b8, #125a9a);
+  color: #fff;
+  padding: 60px 70px;
+  max-width: 1000px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2;
+  border-radius: 12px;
+  clip-path: polygon(0 0, 93% 0, 100% 100%, 7% 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vision-mission-box h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 25px 0 15px;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') repeat center/cover;
+  filter: blur(8px) opacity(0.25);
+  z-index: 0;
+}
+
+.faq-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a2a8b;
+  margin-bottom: 50px;
+}
+
+.faq-container {
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, #0d73b8, #125a9a);
+  color: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Lists inside FAQ */
+.faq-item ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-top: 10px;
+}
+
+.faq-item li {
+  margin-bottom: 6px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .robot-header h1,
+  .specs-title,
+  .faq-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .robot-container,
+  .robot-bottom,
+  .specs-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .robot-content ul,
+  .robot-features ul,
+  .specs-list {
+    text-align: left;
+  }
+
+  .robot-header h1,
+  .specs-title {
+    font-size: 1.8rem;
+  }
+
+  .vision-mission-box {
+    padding: 40px 25px;
+    font-size: 1rem;
+  }
+
+  .vision-mission-box h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .robot-header h1,
+  .specs-title,
+  .faq-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+
+  .specs-image {
+    max-width: 300px;
+  }
+
+  .faq-item {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* === SCROLL ANIMATION CLASSES === */
+
+/* Generic "before" state for all animations */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Specific starting positions */
+.scroll-animate.slide-in-left {
+  transform: translateX(-80px);
+}
+
+.scroll-animate.slide-in-right {
+  transform: translateX(80px);
+}
+
+.scroll-animate.fade-in-up {
+  transform: translateY(50px);
+}
+
+/* Generic "after" (visible) state */
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* === END SCROLL ANIMATION CLASSES === */
+
+.faq-item {
+  /* ... keep all your existing styles ... */
+  background: linear-gradient(135deg, #0f3ac1, #0a2a8b);
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  /* ✅ Add these new properties for the stagger effect */
+  opacity: 0;
+  transform: translateY(30px);
+  /* Make sure transition includes opacity and transform */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+}
+
+/* ✅ The "visible" state for FAQ items */
+.faq-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-item:hover {
+  /* This existing hover effect will still work */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(10, 42, 139, 0.3);
+}
+
+
+.specs-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+
+}
+
+/* === END CLEANUP === */

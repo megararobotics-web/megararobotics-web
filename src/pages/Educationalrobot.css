@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
+
+
+.courses-container {
+  text-align: center;
+  padding: 40px 20px;
+  
+}
+
+.courses-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #003087;
+}
+
+.courses-image img {
+  max-width: 1000px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 30px;
+  border-radius: 6px;
+}
+
+.courses-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.courses-list ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #003087;
+  font-size: 1rem;
+}
+
+.program-offers {
+  background-color: #d9e8ff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  color: #003087;
+  line-height: 1.6;
+}
+
+.program-offers strong {
+  color: #002060;
+}
+
+.quote-btn {
+  margin: 20px auto 0;   /* auto centers horizontally */
+  display: block;        /* required for auto centering */
+  padding: 12px 30px;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.quote-btn:hover {
+  background-color: #0050d4;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 992px) {
+  .courses-list {
+    gap: 30px;
+  }
+  .courses-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-list {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .courses-list ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .program-offers {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-heading {
+    font-size: 1.3rem;
+  }
+
+  .courses-image img {
+    max-width: 100%;
+  }
+
+  .quote-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+  }
+}
+
+
+/* === SCROLL ANIMATION CLASSES === */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.scroll-animate.fade-in-up {
+  transform: translateY(50px);
+}
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+/* === END SCROLL ANIMATION CLASSES === */
+
+
+
+
+/* === Educational Robots Section === */
+.educational-robot-section {
+  padding: 100px 20px 50px;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.educational-robot-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') repeat center/cover;
+  filter: blur(8px) opacity(0.4);  /* ✅ blur + fade */
+  z-index: 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #084386;
+  margin-bottom: 50px;
+}
+
+/* 3-column grid layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.educational-robot-card {
+  width: 100%;
+  max-width: 450px;
+  justify-self: center;
+}
+
+/* Image block */
+.educational-robot-img {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.educational-robot-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: -60px; /* overlap effect */
+}
+
+/* Content block */
+.educational-robot-content {
+  background-color: #0066cc;
+  color: #fff;
+  width: 100%;
+  min-height: 300px;
+  padding: 60px 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.educational-robot-card:hover .educational-robot-content {
+  transform: translateY(-5px);
+}
+
+.educational-robot-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.educational-robot-content h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.educational-robot-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Stylish Outline Button */
+.educational-robot-content button {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 30px; /* pill shape */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.educational-robot-content button:hover {
+  background: #fff;
+  color: #0066cc;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .educational-robot-section {
+    padding-top: 80px;
+  }
+  .cards-container {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+  .educational-robot-card {
+    width: 90%;
+  }
+}

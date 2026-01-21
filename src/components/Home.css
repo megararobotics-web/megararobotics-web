@@ -1,0 +1,335 @@
+
+
+.support-container {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ebf5ff; /* Light background like in image */
+  color: #1e293b; /* Dark blue text */
+}
+
+.support-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  margin-left: 35px;
+}
+
+.support-subtitle {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 30px;
+  color: #475569;
+  margin-left: 35px;
+}
+
+.support-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  
+}
+
+
+.support-card {
+  
+  width: 200px;
+  border-radius: 8px;
+  text-align: left;
+  
+}
+
+.support-icon {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.support-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.support-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+.responsive-img {
+  width: 100%;       /* Image takes full width of its container */
+  height: auto;      /* Height adjusts automatically to maintain aspect ratio */
+  display: block;    /* Remove inline spacing issues */
+  max-width: 400px;  /* Optional: limit the maximum size */
+  margin: 0 auto;    /* Optional: center if smaller than container */
+}
+.promo__wrapper-container{
+background-color: #000000;
+}
+
+
+
+.pallet-jack-link {
+  opacity: 0;
+  transform: translateX(-100px); /* start left */
+  transition: all 4s ease-out;
+}
+
+.pallet-jack-link.slide-in {
+  opacity: 1;
+  transform: translateX(0); /* slide to original position */
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Responsive for Cards ===== */
+@media (max-width: 1024px) {
+  .card__content h2 {
+    font-size: 2rem;
+  }
+
+  .card__content p {
+    font-size: 1.1rem;
+  }
+
+  .card__cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-robots {
+    padding: 40px 20px;
+  }
+
+  .card__content h2 {
+    font-size: 1.8rem;
+  }
+
+  .card__content p {
+    font-size: 1rem;
+  }
+
+  .card__cards {
+    grid-template-columns: 1fr 1fr; /* 2 cards per row on tablets */
+    gap: 20px;
+  }
+
+  .card__card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card__cards {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+
+  .card__content h2 {
+    font-size: 1.6rem;
+  }
+
+  .card__content p {
+    font-size: 0.95rem;
+  }
+
+  .card__card {
+    padding: 16px;
+  }
+
+  .card__card img {
+    height: 180px;
+  }
+
+  .card__card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card__card p {
+    font-size: 0.9rem;
+  }
+
+  .card__card a {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+
+
+:root {
+  --bg-light: linear-gradient(135deg, #e8f4ff, #f9fbff);
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.12);
+  --text-dark: #1e293b;
+  --accent-gradient: linear-gradient(90deg, #4facfe, #00f2fe);
+  --btn-color: #2f80ed;
+  --btn-hover: #56ccf2;
+}
+
+/* ====== SECTION ====== */
+.robots-section {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 80px 20px;
+  background: var(--bg-light);
+  overflow: hidden;
+}
+
+/* ====== BACKGROUND IMAGE ====== */
+.robots-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') center/cover no-repeat;
+  opacity: 0.15;
+  filter: blur(5px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.robots-section * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ===== Section Header ===== */
+.section-header h2 {
+  font-size: 2.8rem;
+  color: #16365f;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.section-header p {
+  color: #4a4a4a;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 45px;
+  line-height: 1.6;
+}
+
+/* ===== Card Grid ===== */
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* added better spacing between cards */
+  flex-wrap: wrap;
+  
+}
+
+/* ===== Card ===== */
+.card {
+  position: relative;
+  width: 330px; /* reduced size slightly */
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f4f9ff, #e2ebf7); /* light soft blue */
+  box-shadow:
+    8px 8px 18px rgba(0, 0, 0, 0.12),
+    -8px -8px 18px rgba(255, 255, 255, 0.7);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+}
+
+/* ===== Hover 3D Lift ===== */
+.card:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
+  box-shadow:
+    12px 12px 22px rgba(0, 0, 0, 0.15),
+    -10px -10px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== Image + Video Overlay ===== */
+.card-img,
+.card-video {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  transition: opacity 0.5s ease;
+}
+
+.card-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card:hover .card-video {
+  opacity: 1;
+}
+
+.card:hover .card-img {
+  opacity: 0;
+}
+
+/* ===== Content ===== */
+.card h3 {
+  font-size: 1.55rem;
+  color: #0f2b4c;
+  font-weight: 700;
+  margin: 16px 0 10px;
+  transition: all 0.3s ease;
+}
+
+.card p {
+  font-size: 1.05rem;
+  color: #52637b;
+  margin-bottom: 18px;
+  padding: 0 14px;
+  line-height: 1.5;
+}
+
+/* Animate heading slightly upward */
+.card:hover h3 {
+  color: #0077cc;
+  transform: translateY(-3px);
+}
+
+/* ===== Button ===== */
+.learn-more-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #5da9ff, #7bcfff); /* soft blue gradient */
+  color: #fff;
+  padding: 11px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    0 4px 10px rgba(93, 169, 255, 0.3);
+}
+
+.learn-more-btn:hover {
+  background: linear-gradient(90deg, #66b3ff, #99d8ff);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .card-img,
+  .card-video {
+    height: 60%;
+  }
+}

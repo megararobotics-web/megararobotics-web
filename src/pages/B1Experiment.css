@@ -1,0 +1,265 @@
+/* ==========================================================
+   Clean & Modern Course Module Page Styles
+   Enhanced version by GPT-5
+========================================================== */
+
+/* Page background & layout */
+.cm-page {
+  background: linear-gradient(270deg, #d6e4f0, #c2e9fb, #f0f5f9, #c2e9fb);
+  margin-top: 70px;
+  color: #111;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Content wrapper */
+.cm-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffffaa;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+/* ==========================================================
+   Section Header Bars
+========================================================== */
+.cm-bar {
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: 18px 0 12px 0;
+  color: #fff;
+}
+
+/* color-coded bars */
+.cm-bar-setup {
+  background: #f7db76;
+  color: #202020;
+}
+
+.cm-bar-beginner {
+  background: linear-gradient(90deg, #1fa2ff, #12d8fa, #a6ffcb);
+}
+
+.cm-bar-intermediate {
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+
+.cm-bar-advanced {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+
+/* ==========================================================
+   Link Lists
+========================================================== */
+.cm-setup-links {
+  background: transparent;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* general link style */
+.cm-link,
+.cm-item-link,
+.cm-sample-link {
+  color: #0047ab;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* subtle hover glow */
+.cm-link:hover,
+.cm-item-link:hover,
+.cm-sample-link:hover {
+  color: #0b57a4;
+  text-shadow: 0 0 5px rgba(0, 80, 200, 0.2);
+}
+
+/* Setup section link buttons */
+.cm-link {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Grid layout for content sections */
+.cm-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 12px;
+  padding: 14px 16px 24px 16px;
+  align-items: start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cm-list-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cm-list-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.cm-item-link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.cm-sample-link {
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* ==========================================================
+   Content Area
+========================================================== */
+.cm-content-area {
+  margin-top: 28px;
+  padding: 12px 24px 40px 24px;
+}
+
+.cm-content-title {
+  font-family: "Georgia", serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 12px 0 22px 0;
+  color: #0047ab;
+}
+
+.cm-content-area p {
+  text-align: justify;
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.cm-content-area h3 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.cm-content-area ol,
+.cm-content-area ul {
+  margin-left: 28px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   Top Button
+========================================================== */
+.cm-top-button {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f0f0f0, #ffffff);
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.cm-top-button:hover {
+  background: #e9f0ff;
+  color: #0047ab;
+  box-shadow: 0 2px 8px rgba(0, 80, 200, 0.2);
+}
+
+/* ==========================================================
+   Decorative Top Separator & Arrow
+========================================================== */
+.top-separator {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #0066cc, transparent);
+  opacity: 0.6;
+}
+
+.top-arrow {
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 3px 8px rgba(0, 102, 204, 0.25);
+  transition: all 0.3s ease;
+}
+
+.top-arrow:hover {
+  transform: translateY(-55%);
+  box-shadow: 0 5px 12px rgba(0, 102, 204, 0.35);
+}
+
+/* ==========================================================
+   Responsive Design
+========================================================== */
+@media (max-width: 768px) {
+  .cm-page {
+    margin-top: 50px;
+  }
+
+  .cm-wrapper {
+    width: 92%;
+    box-shadow: none;
+  }
+
+  .cm-bar {
+    font-size: 15.5px;
+  }
+
+  .cm-list-grid {
+    grid-template-columns: 1fr 130px;
+    gap: 6px;
+  }
+
+  .cm-item-link,
+  .cm-sample-link,
+  .cm-link {
+    font-size: 16px;
+  }
+
+  .cm-content-title {
+    font-size: 24px;
+  }
+
+  .top-arrow {
+    width: 34px;
+    height: 34px;
+  }
+}

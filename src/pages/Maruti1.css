@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
+
+.maruti-container {
+  position: relative;   /* needed for overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 40px;
+  gap: 50px;
+  background: #f7f9fc;  /* fallback color */
+  overflow: hidden;
+}
+
+/* Background overlay */
+.maruti-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/bg.png') repeat center/cover;
+  filter: blur(8px) opacity(0.3);  /* ✅ blur + fade */
+  z-index: 0;
+}
+
+/* Content should stay on top */
+.maruti-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Left - Image */
+.maruti-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right - Content */
+.maruti-content {
+  max-width: 600px;
+  color: #003366;
+}
+
+.maruti-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.maruti-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+.maruti-features {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+
+}
+
+.maruti-features li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.quote-btn {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+  background-color: #0066cc;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .maruti-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .maruti-image img {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .maruti-content {
+    max-width: 100%;
+  }
+
+  .maruti-features {
+    text-align: left;
+  }
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* poster background */
+.video-wrapper img.poster-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* video */
+.video-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  background: transparent;
+}
+
+/* ✅ Mobile optimization */
+@media (max-width: 768px) {
+  .video-wrapper {
+    max-width: 100%;     /* full width on tablets/mobiles */
+    border-radius: 8px;  /* slightly smaller radius */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    border-radius: 6px;
+  }
+
+  .video-player {
+    object-fit: cover;   /* fill screen better on small phones */
+  }
+}
+
+
+/* Carousel Container */
+.carousel {
+  width: 100%;
+  
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Carousel Image */
+.carousel img {
+  width: 500px;
+  display: block;
+  border-radius: 12px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Prev/Next Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s background;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.maruti-features1 {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.maruti-features1 li {
+  margin-bottom: 5px;
+}
+
+.maruti-container1 {
+  position: relative;   /* needed for overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  gap: 50px;
+  background: #f7f9fc;  /* fallback color */
+  overflow: hidden;
+}
+
+/* Background overlay */
+.maruti-container1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+ background-color: #fafafa; /* soft light blue */
+  filter: blur(8px) opacity(0.3);  /* ✅ blur + fade */
+  z-index: 0;
+}
+
+/* Content should stay on top */
+.maruti-container1 > * {
+  position: relative;
+  z-index: 1;
+}
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .maruti-container1 {
+    flex-direction: column;      /* stack items vertically */
+    padding: 30px 20px;          /* smaller padding */
+    gap: 30px;                   /* smaller gap */
+    align-items: center;         /* center all content */
+    text-align: center;          /* center text inside elements */
+  }
+
+  .maruti-container1 > * {
+    flex: 1 1 100%;              /* take full width */
+    max-width: 500px;            /* optional max width */
+  }
+
+  .maruti-features1 {
+    padding-left: 0;             /* remove left padding */
+    margin: 0 auto 30px auto;    /* center the list */
+  }
+
+  .maruti-features1 li {
+    text-align: left;             /* keep bullets left-aligned */
+    margin-left: 20px;           /* slight indent for bullets */
+  }
+}
+
+@media (max-width: 500px) {
+  .maruti-container1 {
+    padding: 20px 15px;          /* smaller padding for small screens */
+    gap: 20px;
+  }
+
+  .maruti-features1 {
+    font-size: 0.9rem;           /* smaller font */
+    line-height: 1.5;            /* adjust line height */
+  }
+}
+
+/* === SCROLL ANIMATION CLASSES === */
+
+/* Generic "before" state for all animations */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Specific starting positions */
+.scroll-animate.slide-in-left {
+  transform: translateX(-80px);
+}
+
+.scroll-animate.slide-in-right {
+  transform: translateX(80px);
+}
+
+.scroll-animate.fade-in-up {
+  transform: translateY(50px);
+}
+
+/* Generic "after" (visible) state */
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* === END SCROLL ANIMATION CLASSES === */
