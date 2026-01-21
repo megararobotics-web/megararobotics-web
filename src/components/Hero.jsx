@@ -1,31 +1,48 @@
+import { useEffect, useRef } from "react";
 import React from "react";
 import Navbar from "./Navbar";
 import "./Hero.css";
-import heroVideo from "../assets/hero-video.mp4";
 
-export default function Hero(){
+import heroVideo from "../assets/hero-video.mp4";
+import heroPoster from "../assets/hero-poster.webp";
+
+export default function Hero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay might be blocked — ignore safely
+        });
+      }
+    }
+  }, []);
+
   return (
-   
     <div className="hero">
- <div className="Video-Container">
-      <video
-        className="hero-video"
-        src={heroVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      ></video>
-    
-      {/* Overlay content */}
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1>Empowering Automation with Megara Robotics</h1>
-          <p>Innovative Solutions for Smarter Industrial Operations</p>
+      <div className="Video-Container">
+        <video
+          ref={videoRef}
+          className="hero-video"
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroPoster}
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Empowering Automation with Megara Robotics</h1>
+            <p>Innovative Solutions for Smarter Industrial Operations</p>
+          </div>
         </div>
       </div>
-    </div>  
-
-    </div> 
+    </div>
   );
 }
