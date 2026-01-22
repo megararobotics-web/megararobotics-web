@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -50,24 +50,34 @@
   margin: 0 auto;
 }
 
-/* Team Card */
+/* Team Card — Optimized & Fast */
 .team-card {
-  background: rgba(255, 255, 255, 0.55);
+  /* Visual */
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0.85)
+  );
   border-radius: 20px;
   padding: 32px 24px;
   width: 270px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+
+  /* Border & shadow */
+  border: 1px solid rgba(220, 230, 245, 0.9);
   box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+
+  /* Performance */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
 }
 
+/* Hover effect — GPU safe */
 .team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 120, 255, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.14);
 }
+
+
 
 /* Profile Image */
 .team-image {

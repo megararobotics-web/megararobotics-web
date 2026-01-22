@@ -53,7 +53,15 @@ export default function Teams() {
           {teamMembers.map((member, index) => (
             <div className="team-card" key={index}>
               <div className="team-image">
-                <img src={member.image} alt={member.name} />
+                <img
+  src={member.image}
+  alt={member.name}
+  width="160"
+  height="160"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high"
+/>
               </div>
               <h3>{member.name}</h3>
               <p>{member.role}</p>
