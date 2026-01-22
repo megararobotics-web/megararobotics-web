@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import "./Hero.css";
 
-import heroVideo from "../assets/hero-video.mp4";
+import heroVideo from "../assets/hero_video.mp4";
 import heroPoster from "../assets/hero-poster.webp";
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
 
   return (
     <div className="hero">
-      <div className="Video-Container">
+      <div className="video-container">
         <video
           ref={videoRef}
           className="hero-video"
