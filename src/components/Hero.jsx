@@ -10,20 +10,22 @@ export default function Hero() {
   const videoRef = useRef(null);
 
 useEffect(() => {
-  const video = videoRef.current;
-  if (!video) return;
+  if (!imageRef.current) return;
 
-  const tryPlay = () => {
-    video.play().catch(() => {
-      // autoplay blocked or delayed
-    });
-  };
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setAnimate(true);
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
 
-  // Play when metadata is ready
-  video.addEventListener("loadedmetadata", tryPlay);
+  observer.observe(imageRef.current);
 
   return () => {
-    video.removeEventListener("loadedmetadata", tryPlay);
+    observer.disconnect();
   };
 }, []);
 
