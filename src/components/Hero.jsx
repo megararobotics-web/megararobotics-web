@@ -9,17 +9,27 @@ import heroPoster from "../assets/hero-poster.webp";
 export default function Hero() {
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay might be blocked — ignore safely
-        });
-      }
-    }
-  }, []);
+useEffect(() => {
+  const video = videoRef.current;
+  if (!video) return;
+
+  let played = false;
+
+  const tryPlay = () => {
+    if (played) return;
+    played = true;
+    video.play().catch(() => {
+      // autoplay blocked – ignore safely
+    });
+  };
+
+  video.addEventListener("loadedmetadata", tryPlay);
+
+  return () => {
+    video.removeEventListener("loadedmetadata", tryPlay);
+  };
+}, []);
+
 
   return (
     <div className="hero">
