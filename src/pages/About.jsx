@@ -13,10 +13,15 @@ export default function About  () {
    
   <div className="about-container">
   <div className="about-image">
-    <img
-      src={img}
-      alt="Megara Robotics"
-    />
+  <img
+    src={img}
+    alt="Megara Robotics"
+    width="600"
+    height="400"
+    loading="eager"
+    decoding="async"
+  />
+
   </div>
   <div className="about-text">
     <span className="about-subtitle">About Us</span>
