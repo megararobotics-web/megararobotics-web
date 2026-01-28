@@ -40,7 +40,7 @@ research applications.
                         </div>
                         <div className="img-col">
                             <div className="hero-blob"></div>
-                            <img src={armImage} alt="Bhuja Robotic Arm" className="hero-img" />
+                            <img src={armImage} alt="Bhuja Robotic Arm" className="hero-img slide-in-right" />
                         </div>
                     </div>
                 </section>

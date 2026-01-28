@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import "./Hero.css";
 
-import heroVideo from "../assets/hero_video.mp4";
+import heroVideo from "../assets/hero_video1.webm";
 import heroPoster from "../assets/hero-poster.webp";
 
 export default function Hero() {

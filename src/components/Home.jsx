@@ -10,11 +10,11 @@ import arm from "../assets/bhuja.png";
 import karambot from "../assets/karambot.png";
 
 
-import wheelchairVid from "../assets/wheelChair.mp4";
-import warehouseVid from "../assets/warehouse.mp4";
-import educationalVid from "../assets/educationRobot.mp4";
-import armVid from "../assets/bhuja1.mp4";
-import karamvido from "../assets/karambot.mp4"
+import wheelchairVid from "../assets/wheelChair1.webm";
+import warehouseVid from "../assets/warehouse1.webm";
+import educationalVid from "../assets/educationRobot1.webm";
+import armVid from "../assets/bhuja1.webm";
+import karamvido from "../assets/karambot1.webm"
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
