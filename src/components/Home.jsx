@@ -7,12 +7,14 @@ import wheelchair from "../assets/wheelChair.png";
 import warehouse from "../assets/warehouse.png";
 import educationalrobot from "../assets/educationRobot.png";
 import arm from "../assets/bhuja.png";
+import karambot from "../assets/karambot.png";
 
 
 import wheelchairVid from "../assets/wheelChair.mp4";
 import warehouseVid from "../assets/warehouse.mp4";
 import educationalVid from "../assets/educationRobot.mp4";
 import armVid from "../assets/bhuja1.mp4";
+import karamvido from "../assets/karambot.mp4"
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
@@ -57,7 +59,12 @@ export default function Home() {
           </p>
         </div>
 
+
         <div className="card-grid">
+
+
+
+
           {/* Health Care Robot */}
           <div
             className="card"
@@ -121,7 +128,30 @@ export default function Home() {
             <h3>Manipulator</h3>
             <a href="/bhuja" className="learn-more-btn">Learn More</a>
           </div>
+
+
+                    {/* kerambot Robot */}
+          <div
+            className="card"
+            onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
+            onMouseLeave={(e) => {
+              const vid = e.currentTarget.querySelector("video");
+              vid.pause();
+              vid.currentTime = 0;
+            }}
+          >
+            <img src={karambot} alt="Robotic Arm" className="card-img" />
+            <video className="card-video" src={karamvido} muted loop></video>
+            <h3>Kerambot</h3>
+            <a href="/Kerambot" className="learn-more-btn">Learn More</a>
+          </div>
+
+
+
         </div>
+
+
+        
       </section>
 
       <div className="support-container">

@@ -2,7 +2,9 @@ import React, { useRef, useState, useEffect } from 'react' // ✅ Added imports
 import './Wheelchair.css'
 import Navbar from '../components/Navbar'
 import chair1 from '../assets/wheelchair1.png'
-import chair2 from '../assets/wheelchair2.png'
+import chair2 from '../assets/foldablewheelchair.png'
+import chair3 from '../assets/wheelchair2.png'
+
 import Footer from '../components/Footer'
 
 // ✅ 1. Reusable hook for scroll animations
@@ -87,6 +89,28 @@ export default function Wheelchair() {
               </p>
               <br/>
               <button onClick={() => window.location.href='/maruti2'}>Learn More</button>
+            </div>
+          </div>
+
+
+                    {/* Card 3 */}
+          <div 
+            ref={card2Ref} // ✅ Apply ref
+            style={{ transitionDelay: '150ms' }} // ✅ Add a slight delay
+            className={`wheelchair-card scroll-animate fade-in-up ${isCard2Visible ? "visible" : ""}`} // ✅ Apply classes
+          >
+            <div className="wheelchair-img">
+              <img src={chair3} alt="Maruti 2.0" />
+            </div>
+            <div className="wheelchair-content">
+<h3>SELF-E</h3>
+<h4>Autonomous Hospital Wheelchair</h4>
+<p>
+SELF-E is An intelligent autonomous wheelchair designed for safe, comfortable, and independent mobility.
+</p>
+
+              <br/>
+              <button onClick={() => window.location.href='/selfe'}>Learn More</button>
             </div>
           </div>
 

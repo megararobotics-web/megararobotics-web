@@ -31,6 +31,12 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.product-image video {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    display: block;
+}
 
 /* --- New Page Layout --- */
 .products-container {

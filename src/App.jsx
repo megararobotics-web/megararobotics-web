@@ -25,6 +25,8 @@ import Scorpine from "./pages/Scorpine";
 import Cancero from "./pages/Cancero";
 import Spidera from "./pages/Spidera";
 import CoursesDetails from "./pages/CoursesDetails";
+import Karambot from "./pages/Karambot";
+import Selfe from "./pages/Selfe";
 
 
 function App() {
@@ -57,6 +59,8 @@ function App() {
              <Route path="/cancero" element={<Cancero/>} />
              <Route path="/spidera" element={<Spidera/>} />
              <Route path="/courses-details" element={<CoursesDetails/>} />
+             <Route path="/kerambot" element={<Karambot/>} />
+              <Route path="/selfe" element={<Selfe/>} />
         </Routes>
     </Router>
   );

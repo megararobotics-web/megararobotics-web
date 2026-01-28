@@ -40,8 +40,8 @@
 .cards-container1 {
   /* This creates the 2-column layout */
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 20px; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 120px; 
   
   /* This centers the grid on the page */
   max-width: 1200px; 
@@ -51,7 +51,7 @@
 /* This makes sure cards fill their grid cell */
 .wheelchair-card {
   width: 100%; 
-  max-width: 550px; 
+  max-width: 450px; 
   justify-self: center; /* Centers the card if cell is wider */
   /* ... keep all your other .wheelchair-card styles ... */
 }
