@@ -10,9 +10,9 @@ import arm from "../assets/bhuja.png";
 import karambot from "../assets/karambot.png";
 
 
-import wheelchairVid from "../assets/wheelChair1.webm";
-import warehouseVid from "../assets/warehouse1.webm";
-import educationalVid from "../assets/educationRobot1.webm";
+import wheelchairVid from "../assets/wheelChair.webm";
+import warehouseVid from "../assets/warehouse.webm";
+import educationalVid from "../assets/educationRobot.webm";
 import armVid from "../assets/bhuja1.webm";
 import karamvido from "../assets/karambot1.webm"
 

@@ -81,10 +81,11 @@ export default function Products() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                             />
                         </div>
                         <div className="product-text">
-                            <span className="category">KARAMBOT</span>
+                            <span className="category">KERAMBOT</span>
                             <h2>Kerambot is an intelligent tree-climbing harvesting robot</h2>
                             <p>
                                 Kerambot is designed to safely and efficiently harvest coconuts without human climbing.
@@ -108,6 +109,7 @@ export default function Products() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                             />
                         </div>
                         <div className="product-text">
@@ -136,6 +138,7 @@ export default function Products() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                             />
                         </div>
                         <div className="product-text">
@@ -162,6 +165,7 @@ export default function Products() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                             />
                         </div>
                         <div className="product-text">
@@ -188,6 +192,7 @@ export default function Products() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                             />
                         </div>
                         <div className="product-text">

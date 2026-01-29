@@ -40,10 +40,12 @@ useEffect(() => {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={heroPoster}
+          autoPlay
+
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideo} type="video/webm" />
         </video>
 
         <div className="hero-content">
