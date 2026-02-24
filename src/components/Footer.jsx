@@ -1,5 +1,5 @@
 import React from 'react'
-import qr from '../assets/Qr.png'
+import qr from '/assets/Qr.png'
 import './Footer.css'
 export default function Footer  () {
   return (

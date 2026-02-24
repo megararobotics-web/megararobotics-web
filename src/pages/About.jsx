@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import img from '../assets/aboutas.webp'
+import img from '/assets/aboutas.webp'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 

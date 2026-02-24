@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import chair1 from '../assets/smorphi1.png'
-import chair2 from '../assets/smorphi2.png'
+import chair1 from '/assets/smorphi1.png'
+import chair2 from '/assets/smorphi2.png'
 import Footer from '../components/Footer'
 
 export default function Smorphi  ()  {

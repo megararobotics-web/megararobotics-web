@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"; // ✅ NavLink gives active styling
 import "./Navbar.css";
-import megaraLogo from "../assets/megaraLogo.png";
-import hutlablogo from "../assets/hutlablogo.png";
+import megaraLogo from "/assets/megaraLogo.png";
+import hutlablogo from "/assets/hutlablogo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

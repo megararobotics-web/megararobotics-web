@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import chair11 from "../assets/smorphi2.png"; // use actual path
+import chair11 from "/assets/smorphi2.png"; // use actual path
 import Footer from '../components/Footer'
 import './Smorphi2.css'
 export default function smorphi2  () {

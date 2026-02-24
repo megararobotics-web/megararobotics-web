@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import './Maruti1.css'
 import Navbar from '../components/Navbar'
-import chair11 from "../assets/smorphi.png"; // use actual path
+import chair11 from "/assets/smorphi.png"; // use actual path
 
-import chair1 from '../assets/smarp2.webp';
-import chair2 from '../assets/smorphi1.png';
+import chair1 from '/assets/smarp2.webp';
+import chair2 from '/assets/smorphi1.png';
 
 import Footer from "../components/Footer";
 

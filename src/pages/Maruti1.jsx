@@ -1,13 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import './Maruti1.css'
 import Navbar from '../components/Navbar'
-import chair11 from "../assets/wheelchair1.png"; // use actual path
-import maruthi1 from '../assets/maruthi1.mp4'
-import chair1 from '../assets/wheelchair3.webp';
-import chair2 from '../assets/wheelchair2.png';
-import chair3 from '../assets/wheelchair1.webp';
+import chair11 from "/assets/wheelchair1.png"; // use actual path
+import maruthi1 from '/assets/maruthi1.mp4'
+import chair1 from '/assets/wheelchair3.webp';
+import chair2 from '/assets/wheelchair2.png';
+import chair3 from '/assets/wheelchair1.webp';
 import Footer from "../components/Footer";
-import preview from '../assets/preview.png'
+import preview from '/assets/preview.png'
 
 // ✅ 1. Reusable hook for scroll animations
 const useAnimateOnScroll = (threshold = 0.2) => {

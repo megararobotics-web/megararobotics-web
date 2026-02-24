@@ -1,8 +1,8 @@
 import React from 'react'
 import './BioInspired.css'
 import Navbar from '../components/Navbar'
-import bioimg from '../assets/bioinspiredmain.png'
-import inspirado from '../assets/Inspirado-Robot.mp4'
+import bioimg from '/assets/bioinspiredmain.png'
+import inspirado from '/assets/Inspirado-Robot.mp4'
 import Footer from '../components/Footer'
 export default function BioInspired  () {
   return (

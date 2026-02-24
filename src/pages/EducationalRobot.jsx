@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import chelonia from '../assets/chelonia.png';
-import bioinspired from '../assets/bioinspired.png';
-import smorphi from '../assets/smorphi.png';
+import chelonia from '/assets/chelonia.png';
+import bioinspired from '/assets/bioinspired.png';
+import smorphi from '/assets/smorphi.png';
 import './Educationalrobot.css';
 
 // Reusable hook for scroll animations

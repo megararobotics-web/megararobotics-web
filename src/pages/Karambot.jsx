@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 // Assets
-import armImage from '../assets/karambot2.png';
-import featureImage from '../assets/karambot1.png';
-import showcaseVideo from '../assets/karambotvid.mp4';
+import armImage from '/assets/karambot2.png';
+import featureImage from '/assets/karambot1.png';
+import showcaseVideo from '/assets/karambotvid.mp4';
 
 import './Bhuja.css';
 

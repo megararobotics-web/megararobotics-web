@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react' // ✅ Added imports
 import './Wheelchair.css'
 import Navbar from '../components/Navbar'
-import chair1 from '../assets/wheelchair1.png'
-import chair2 from '../assets/foldablewheelchair.png'
-import chair3 from '../assets/wheelchair2.png'
+import chair1 from '/assets/wheelchair1.png'
+import chair2 from '/assets/foldablewheelchair.png'
+import chair3 from '/assets/wheelchair2.png'
 
 import Footer from '../components/Footer'
 

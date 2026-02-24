@@ -1,12 +1,12 @@
 import React from 'react';
 import './Teams.css';
 
-import imgRajesh from '../assets/img2.jpg';
-import imgRamesh from '../assets/img1.jpg';
-import imgSakthi from '../assets/img3.png';
-import imgShree from '../assets/img4.jpg';
-import Srinivasan from '../assets/srenivasan.jpg';
-import Raghavan from '../assets/Raghavan.jpg';
+import imgRajesh from '/assets/img2.jpg';
+import imgRamesh from '/assets/img1.jpg';
+import imgSakthi from '/assets/img3.png';
+import imgShree from '/assets/img4.jpg';
+import Srinivasan from '/assets/srenivasan.jpg';
+import Raghavan from '/assets/Raghavan.jpg';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 

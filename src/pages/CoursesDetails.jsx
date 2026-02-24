@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import banner from '../assets/banner.jpg';
+import banner from '/assets/banner.jpg';
 import './Educationalrobot.css';
 
 // Reusable hook for scroll animations

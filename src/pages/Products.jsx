@@ -4,11 +4,11 @@ import './Products.css';
 import Footer from '../components/Footer';
 
 // 🔥 IMPORT WEBM VIDEOS (with transparency)
-import Karambot from '../assets/karambot.webm';
-import WheelChair from '../assets/wheelChair.webm';
-import Warehouse from '../assets/warehouse.webm';
-import selfe from '../assets/selfe.webm';
-import EducationRobot from '../assets/educationRobot.webm';
+import Karambot from '/assets/karambot.webm';
+import WheelChair from '/assets/wheelChair.webm';
+import Warehouse from '/assets/warehouse.webm';
+import selfe from '/assets/selfe.webm';
+import EducationRobot from '/assets/educationRobot.webm';
 
 export default function Products() {
     const imageRef1 = useRef(null);

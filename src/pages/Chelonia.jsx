@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'; // ✅ Added imports
 import './Chelonia.css'
-import cheloniab1 from '../assets/cheloniab1.png'
-import cheloniab2 from '../assets/cheloniab2.png'
-import chelonia from '../assets/cheloniaa.png'
+import cheloniab1 from '/assets/cheloniab1.png'
+import cheloniab2 from '/assets/cheloniab2.png'
+import chelonia from '/assets/cheloniaa.png'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'

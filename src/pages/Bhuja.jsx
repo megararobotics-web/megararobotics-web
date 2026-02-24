@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 // Assets
-import armImage from '../assets/bhuja1.png';
-import featureImage from '../assets/bhuja2.png';
-import showcaseVideo from '../assets/bhujavid.mp4';
+import armImage from '/assets/bhuja1.png';
+import featureImage from '/assets/bhuja2.png';
+import showcaseVideo from '/assets/bhujavid.mp4';
 
 import './Bhuja.css';
 

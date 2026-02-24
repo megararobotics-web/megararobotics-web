@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar'
-import chelonia from '../assets/chelonia.png'
-import chelonia1 from '../assets/cheloniab1feu.png'
+import chelonia from '/assets/chelonia.png'
+import chelonia1 from '/assets/cheloniab1feu.png'
 import './CheloniaB1.css'
 import Footer from '../components/Footer';
 

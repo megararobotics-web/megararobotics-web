@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./B1Experiment.css";
-import topArrow from "../assets/uparrow.png";
+import topArrow from "/assets/uparrow.png";
 import Footer from '../components/Footer';
 import Navbar from "../components/Navbar";
 

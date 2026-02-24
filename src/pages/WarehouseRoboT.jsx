@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from '../components/Navbar'
 import './WarehouseRoboT.css'
-import robot1 from "../assets/warehouse1.png";  // replace with your image
-import robot2 from "../assets/warehouse2.png";  // replace with your image
-import robotSpec from "../assets/warehouse3.png"; // robot on right side
+import robot1 from "/assets/warehouse1.png";  // replace with your image
+import robot2 from "/assets/warehouse2.png";  // replace with your image
+import robotSpec from "/assets/warehouse3.png"; // robot on right side
 import Footer from "../components/Footer";
 
 // ✅ 1. Reusable hook created from your original logic

@@ -3,18 +3,18 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import './Home.css';
 import { FaWrench, FaUsersCog, FaClock, FaToggleOn } from "react-icons/fa";
-import wheelchair from "../assets/wheelChair.png";
-import warehouse from "../assets/warehouse.png";
-import educationalrobot from "../assets/educationRobot.png";
-import arm from "../assets/bhuja.png";
-import karambot from "../assets/karambot.png";
+import wheelchair from "/assets/wheelChair.png";
+import warehouse from "/assets/warehouse.png";
+import educationalrobot from "/assets/educationRobot.png";
+import arm from "/assets/bhuja.png";
+import karambot from "/assets/karambot.png";
 
 
-import wheelchairVid from "../assets/wheelChair.webm";
-import warehouseVid from "../assets/warehouse.webm";
-import educationalVid from "../assets/educationRobot.webm";
-import armVid from "../assets/bhuja1.webm";
-import karamvido from "../assets/karambot1.webm"
+import wheelchairVid from "/assets/wheelChair.webm";
+import warehouseVid from "/assets/warehouse.webm";
+import educationalVid from "/assets/educationRobot.webm";
+import armVid from "/assets/bhuja1.webm";
+import karamvido from "/assets/karambot1.webm"
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";

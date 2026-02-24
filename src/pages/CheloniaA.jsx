@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar'
-import chelonia from '../assets/cheloniaadv.png'
-import chelonia1 from '../assets/cheloniabafeu.png'
+import chelonia from '/assets/cheloniaadv.png'
+import chelonia1 from '/assets/cheloniabafeu.png'
 import './CheloniaB1.css'
 import Footer from '../components/Footer';
-import cheloniavideo from '../assets/chelonia.mp4'
-import thumbnil from '../assets/thumbnail.jpg'
+import cheloniavideo from '/assets/chelonia.mp4'
+import thumbnil from '/assets/thumbnail.jpg'
 
 export default function CheloniaA  ()  {
         const imageRef1 = useRef(null);
