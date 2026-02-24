@@ -3,8 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import "./Hero.css";
 
-import heroVideo from "/assets/hero_video1.webm";
-import heroPoster from "/assets/hero-poster.webp";
+
 
 export default function Hero() {
   const videoRef = useRef(null);
@@ -41,11 +40,11 @@ useEffect(() => {
           loop
           playsInline
           preload="auto"
-          poster={heroPoster}
+          poster="/assets/hero-poster.webp"
           autoPlay
 
         >
-          <source src={heroVideo} type="video/webm" />
+          <source src="/assets/hero_video1.webm" type="video/webm" />
         </video>
 
         <div className="hero-content">

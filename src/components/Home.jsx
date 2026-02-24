@@ -6,14 +6,14 @@ import { FaWrench, FaUsersCog, FaClock, FaToggleOn } from "react-icons/fa";
 import wheelchair from "/assets/wheelChair.png";
 import warehouse from "/assets/warehouse.png";
 import educationalrobot from "/assets/educationRobot.png";
-import arm from "/assets/bhuja.png";
+
 import karambot from "/assets/karambot.png";
 
 
 import wheelchairVid from "/assets/wheelChair.webm";
 import warehouseVid from "/assets/warehouse.webm";
 import educationalVid from "/assets/educationRobot.webm";
-import armVid from "/assets/bhuja1.webm";
+
 import karamvido from "/assets/karambot1.webm"
 
 import ContactForm from "./ContactForm";
@@ -123,8 +123,8 @@ export default function Home() {
               vid.currentTime = 0;
             }}
           >
-            <img src={arm} alt="Robotic Arm" className="card-img" />
-            <video className="card-video" src={armVid} muted loop></video>
+            <img src="/assets/bhuja.png" alt="Robotic Arm" className="card-img" />
+            <video className="card-video" src="/assets/bhuja1.webm" muted loop></video>
             <h3>Manipulator</h3>
             <a href="/bhuja" className="learn-more-btn">Learn More</a>
           </div>
