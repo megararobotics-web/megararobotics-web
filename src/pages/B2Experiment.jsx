@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "./B1Experiment.css";
-import topArrow from "/assets/uparrow.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -2398,7 +2397,7 @@ export default function CheloniaManualb2() {
               {contentMap[key].content}
 <div className="top-separator">
   <img
-    src={topArrow}
+    src="/assets/uparrow.png"
     alt="Back to Top"
     onClick={() => scrollTo(topRef)}
     className="top-arrow"

@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import banner from '/assets/banner.jpg';
 import './Educationalrobot.css';
 
 // Reusable hook for scroll animations
@@ -51,7 +50,7 @@ export default function CoursesDetails() {
           ref={coursesImgRef}
           className={`courses-image scroll-animate fade-in-up ${isCoursesImgVisible ? "visible" : ""}`}
         >
-          <img src={banner} alt="Educational Robot" />
+          <img src="/assets/banner.jpg" alt="Educational Robot" />
         </div>
 
         {/* Courses List */}

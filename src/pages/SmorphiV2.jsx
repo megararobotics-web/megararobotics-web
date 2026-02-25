@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import './Maruti1.css'
 import Navbar from '../components/Navbar'
-import chair11 from "/assets/smorphi.png"; // use actual path
-
 import chair1 from '/assets/smarp2.webp';
 import chair2 from '/assets/smorphi1.png';
 
@@ -28,7 +26,7 @@ export default function SmorphiV2 ()  {
       <div className="maruti-container">
         {/* Left - Image */}
         <div className="maruti-image">
-          <img src={chair11} alt="Maruti 1.0" />
+          <img src="/assets/smorphi.png" alt="Maruti 1.0" />
         </div>
 
         {/* Right - Content */}

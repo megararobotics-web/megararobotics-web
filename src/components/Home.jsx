@@ -3,19 +3,6 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import './Home.css';
 import { FaWrench, FaUsersCog, FaClock, FaToggleOn } from "react-icons/fa";
-import wheelchair from "/assets/wheelChair.png";
-import warehouse from "/assets/warehouse.png";
-import educationalrobot from "/assets/educationRobot.png";
-
-import karambot from "/assets/karambot.png";
-
-
-import wheelchairVid from "/assets/wheelChair.webm";
-import warehouseVid from "/assets/warehouse.webm";
-import educationalVid from "/assets/educationRobot.webm";
-
-import karamvido from "/assets/karambot1.webm"
-
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 
@@ -75,8 +62,8 @@ export default function Home() {
               vid.currentTime = 0;
             }}
           >
-            <img src={wheelchair} alt="Health Care Robot" className="card-img" />
-            <video className="card-video" src={wheelchairVid} muted loop></video>
+            <img src="/assets/wheelChair.png" alt="Health Care Robot" className="card-img" />
+            <video className="card-video" src="/assets/wheelChair.webm" muted loop></video>
             <h3>Health Care</h3>
             <a href="/wheelchair" className="learn-more-btn">Learn More</a>
           </div>
@@ -91,8 +78,8 @@ export default function Home() {
               vid.currentTime = 0;
             }}
           >
-            <img src={warehouse} alt="Warehouse Robot" className="card-img" />
-            <video className="card-video" src={warehouseVid} muted loop></video>
+            <img src="/assets/warehouse.png" alt="Warehouse Robot" className="card-img" />
+            <video className="card-video" src="/assets/warehouse.webm" muted loop></video>
             <h3>Multi-Terrain Robot</h3>
             <a href="/warehouse" className="learn-more-btn">Learn More</a>
           </div>
@@ -107,8 +94,8 @@ export default function Home() {
               vid.currentTime = 0;
             }}
           >
-            <img src={educationalrobot} alt="Educational Robot" className="card-img" />
-            <video className="card-video" src={educationalVid} muted loop></video>
+            <img src="/assets/educationRobot.png" alt="Educational Robot" className="card-img" />
+            <video className="card-video" src="/assets/educationRobot.webm" muted loop></video>
             <h3>Educational Robot</h3>
             <a href="/education" className="learn-more-btn">Learn More</a>
           </div>
@@ -140,8 +127,8 @@ export default function Home() {
               vid.currentTime = 0;
             }}
           >
-            <img src={karambot} alt="Robotic Arm" className="card-img" />
-            <video className="card-video" src={karamvido} muted loop></video>
+            <img src="/assets/karambot.png" alt="Robotic Arm" className="card-img" />
+            <video className="card-video" src="/assets/karambot1.webm" muted loop></video>
             <h3>Kerambot</h3>
             <a href="/Kerambot" className="learn-more-btn">Learn More</a>
           </div>

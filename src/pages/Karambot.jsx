@@ -1,12 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-// Assets
-import armImage from '/assets/karambot2.png';
-import featureImage from '/assets/karambot1.png';
-import showcaseVideo from '/assets/karambotvid.mp4';
-
 import './Bhuja.css';
 
 export default function Karambot() {
@@ -38,7 +32,7 @@ Kerambot is a smart tree-climbing robotic system designed to safely and efficien
                         </div>
                         <div className="img-col">
                             <div className="hero-blob"></div>
-                            <img src={armImage} alt="Bhuja Robotic Arm" className="hero-img slide-in-right" />
+                            <img src="/assets/karambot2.png" alt="Bhuja Robotic Arm" className="hero-img slide-in-right" />
                         </div>
                     </div>
                 </section>
@@ -85,7 +79,7 @@ It combines a high-torque climbing mechanism, a circumferential harvesting syste
                         </div>
                         <div className="img-col">
                             <div className="spec-frame">
-                                <img src={featureImage} alt="Technical Specs" className="spec-img" />
+                                <img src="/assets/karambot1.png" alt="Technical Specs" className="spec-img" />
                             </div>
                         </div>
                     </div>
@@ -99,7 +93,7 @@ It combines a high-torque climbing mechanism, a circumferential harvesting syste
                         
                         <div className="video-player-box">
                             <video
-                                src={showcaseVideo}
+                                src="/assets/karambotvid.mp4"
                                 controls
                                 poster=''
                                 controlsList="nodownload"

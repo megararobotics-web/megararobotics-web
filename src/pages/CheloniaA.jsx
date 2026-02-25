@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar'
-import chelonia from '/assets/cheloniaadv.png'
-import chelonia1 from '/assets/cheloniabafeu.png'
 import './CheloniaB1.css'
 import Footer from '../components/Footer';
-import cheloniavideo from '/assets/chelonia.mp4'
-import thumbnil from '/assets/thumbnail.jpg'
 
 export default function CheloniaA  ()  {
         const imageRef1 = useRef(null);
@@ -55,7 +51,7 @@ export default function CheloniaA  ()  {
                     <div className="main-content-B1">
                         <div className="product-section-B1">
                             <div ref={imageRef1} className={`product-image-B1 ${animate1 ? 'slide-in' : ''}`}>
-                                <img src={chelonia} alt="chelonia" />
+                                <img src="/assets/cheloniaadv.png" alt="chelonia" />
                             </div>
                             <div className="product-text-B1">
                                 <span className="category-B1">Chelonia A</span>
@@ -99,7 +95,7 @@ export default function CheloniaA  ()  {
 
         {/* Right Side: Image */}
         <div ref={imageRef2} className={`product-image-B1 ${animate2 ? 'slide-in' : ''}`}>
-                                <img src={chelonia1} alt="chelonia" />
+                                <img src="/assets/cheloniabafeu.png" alt="chelonia" />
                             </div>
       </div>
 
@@ -113,9 +109,9 @@ export default function CheloniaA  ()  {
  <div className="video-wrapper">
       <video
         className="video-player"
-        src={cheloniavideo}
+        src="/assets/chelonia.mp4"
         controls
-        poster={thumbnil}
+        poster="/assets/thumbnail.jpg"
         preload="metadata"
         controlsList="nodownload"   
         onContextMenu={(e) => e.preventDefault()}

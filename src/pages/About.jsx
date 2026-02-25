@@ -1,6 +1,5 @@
 import React from "react";
 import "./About.css";
-import img from '/assets/aboutas.webp'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -14,7 +13,7 @@ export default function About  () {
   <div className="about-container">
   <div className="about-image">
   <img
-    src={img}
+    src="/assets/aboutas.webp"
     alt="Megara Robotics"
     width="600"
     height="400"

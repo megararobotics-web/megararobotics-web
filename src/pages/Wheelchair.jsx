@@ -1,10 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react' // ✅ Added imports
+import React, { useRef, useState, useEffect } from 'react' 
 import './Wheelchair.css'
 import Navbar from '../components/Navbar'
-import chair1 from '/assets/wheelchair1.png'
-import chair2 from '/assets/foldablewheelchair.png'
-import chair3 from '/assets/wheelchair2.png'
-
 import Footer from '../components/Footer'
 
 // ✅ 1. Reusable hook for scroll animations
@@ -57,7 +53,7 @@ export default function Wheelchair() {
             className={`wheelchair-card scroll-animate fade-in-up ${isCard1Visible ? "visible" : ""}`} // ✅ Apply classes
           >
             <div className="wheelchair-img">
-              <img src={chair1} alt="Maruti 1.0" />
+              <img src="/assets/wheelchair1.png" alt="Maruti 1.0" />
             </div>
             <div className="wheelchair-content">
               <h3>Maruti 1.0</h3>
@@ -78,7 +74,7 @@ export default function Wheelchair() {
             className={`wheelchair-card scroll-animate fade-in-up ${isCard2Visible ? "visible" : ""}`} // ✅ Apply classes
           >
             <div className="wheelchair-img">
-              <img src={chair2} alt="Maruti 2.0" />
+              <img src="/assets/foldablewheelchair.png" alt="Maruti 2.0" />
             </div>
             <div className="wheelchair-content">
               <h3>Maruti 2.0</h3>
@@ -100,7 +96,7 @@ export default function Wheelchair() {
             className={`wheelchair-card scroll-animate fade-in-up ${isCard2Visible ? "visible" : ""}`} // ✅ Apply classes
           >
             <div className="wheelchair-img">
-              <img src={chair3} alt="Maruti 2.0" />
+              <img src="/assets/wheelchair2.png" alt="Maruti 2.0" />
             </div>
             <div className="wheelchair-content">
 <h3>SELF-E</h3>

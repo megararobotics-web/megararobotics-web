@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from '../components/Navbar'
 import './WarehouseRoboT.css'
-import robot1 from "/assets/warehouse1.png";  // replace with your image
-import robot2 from "/assets/warehouse2.png";  // replace with your image
-import robotSpec from "/assets/warehouse3.png"; // robot on right side
+
 import Footer from "../components/Footer";
 
 // ✅ 1. Reusable hook created from your original logic
@@ -92,7 +90,7 @@ export default function WarehouseRobot() {
             ref={row1ImgRef}
             className={`robot-image scroll-animate slide-in-left ${isRow1ImgVisible ? "visible" : ""}`}
           >
-            <img src={robot1} alt="Inspection Robot" />
+            <img src="/assets/warehouse1.png" alt="Inspection Robot" />
           </div>
 
           {/* Right Content */}
@@ -138,7 +136,7 @@ export default function WarehouseRobot() {
             ref={row2ImgRef}
             className={`robot-image scroll-animate slide-in-right ${isRow2ImgVisible ? "visible" : ""}`}
           >
-            <img src={robot2} alt="Robot Side View" />
+            <img src="/assets/warehouse2.png" alt="Robot Side View" />
           </div>
         </div>
       </div>
@@ -172,7 +170,7 @@ export default function WarehouseRobot() {
           <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
             <img
               ref={specImgRef} // ✅ Use the ref from our hook
-              src={robotSpec}
+              src="/assets/warehouse3.png"
               alt="Robot"
               // ✅ Apply animation classes
               className={`specs-image w-80 scroll-animate slide-in-right ${isSpecImgVisible ? "visible" : ""}`}

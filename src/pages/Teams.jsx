@@ -1,12 +1,6 @@
 import React from 'react';
 import './Teams.css';
 
-import imgRajesh from '/assets/img2.jpg';
-import imgRamesh from '/assets/img1.jpg';
-import imgSakthi from '/assets/img3.png';
-import imgShree from '/assets/img4.jpg';
-import Srinivasan from '/assets/srenivasan.jpg';
-import Raghavan from '/assets/Raghavan.jpg';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -14,32 +8,32 @@ const teamMembers = [
   {
     name: "Dr. Rajesh Kannan",
     role: "Director & Founder",
-    image: imgRajesh,
+    image: "/assets/img2.jpg",
   },
   {
     name: "Dr. Ramesh B",
     role: "Director",
-    image: imgRamesh,
+    image: "/assets/img1.jpg",
   },
   {
     name: "Shankar Srinivasan",
     role: "Project Manager",
-    image: Srinivasan,
+    image: "/assets/srenivasan.jpg",
   },
   {
     name: "Dhananjay Raghavan",
     role: "Project Manager",
-    image: Raghavan,
+    image: "/assets/Raghavan.jpg",
   },
   {
     name: "Sakthi Prasad",
     role: "Business Development Manager",
-    image: imgSakthi,
+    image: "/assets/img3.png",
   },
   {
     name: "Shree Rajesh Raagul",
     role: "CTO",
-    image: imgShree,
+    image: "/assets/img4.jpg",
   },
 ];
 

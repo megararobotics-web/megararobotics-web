@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"; // ✅ NavLink gives active styling
 import "./Navbar.css";
-import megaraLogo from "/assets/megaraLogo.png";
-import hutlablogo from "/assets/hutlablogo.png";
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,7 @@ function Navbar() {
       <div className="blur-overlay">
       <div className="navbar-container">
         {/* Left Logo */}
-        <img src={megaraLogo} alt="Left Logo" className="navbar-logo" />
+        <img src="/assets/megaraLogo.png" alt="Left Logo" className="navbar-logo" />
 
         {/* Menu Items */}
         <ul className={`navbar-menu ${isOpen ? "active" : ""}`}>
@@ -49,7 +48,7 @@ function Navbar() {
         </ul>
 
         {/* Right Logo */}
-        <img src={hutlablogo} alt="Right Logo" className="navbar-logo1" />
+        <img src="/assets/hutlablogo.png" alt="Right Logo" className="navbar-logo1" />
 
         {/* Hamburger Button */}
         <div

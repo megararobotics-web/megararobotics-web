@@ -1,8 +1,6 @@
 import React from 'react'
 import './BioInspired.css'
 import Navbar from '../components/Navbar'
-import bioimg from '/assets/bioinspiredmain.png'
-import inspirado from '/assets/Inspirado-Robot.mp4'
 import Footer from '../components/Footer'
 export default function BioInspired  () {
   return (
@@ -16,7 +14,7 @@ export default function BioInspired  () {
       </h1>
 
       <div className="chelonia-image">
-        <img src={bioimg} alt="Chelonia Robot" />
+        <img src="/assets/bioinspiredmain.png" alt="Chelonia Robot" />
       </div>
 
       <div className="chelonia-description">
@@ -37,7 +35,7 @@ export default function BioInspired  () {
         <div className="video-wrapper">
               <video
                 className="video-player"
-                src={inspirado}
+                src="/assets/Inspirado-Robot.mp4"
                 controls
                 preload="metadata"
                 controlsList="nodownload"   

@@ -1,7 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import chair1 from '/assets/smorphi1.png'
-import chair2 from '/assets/smorphi2.png'
 import Footer from '../components/Footer'
 
 export default function Smorphi  ()  {
@@ -15,7 +13,7 @@ export default function Smorphi  ()  {
                   {/* Card 1 */}
                   <div className="wheelchair-card">
                     <div className="wheelchair-img">
-                      <img src={chair1} alt="Maruti 1.0" />
+                      <img src="/assets/smorphi1.png" alt="Maruti 1.0" />
                     </div>
                     <div className="wheelchair-content">
                       <h3>Smorphi-V2 Squarebot</h3>
@@ -30,7 +28,7 @@ export default function Smorphi  ()  {
                   {/* Card 2 */}
                   <div className="wheelchair-card">
                     <div className="wheelchair-img">
-                      <img src={chair2} alt="Maruti 2.0" />
+                      <img src="/assets/smorphi2.png" alt="Maruti 2.0" />
                     </div>
                     <div className="wheelchair-content">
                       <h3>Smorphi 2 Squarebot</h3>

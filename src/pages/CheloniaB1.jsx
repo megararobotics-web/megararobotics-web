@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar'
-import chelonia from '/assets/chelonia.png'
-import chelonia1 from '/assets/cheloniab1feu.png'
 import './CheloniaB1.css'
 import Footer from '../components/Footer';
 
@@ -53,7 +51,7 @@ export default function CheloniaB1  ()  {
                     <div className="main-content-B1">
                         <div className="product-section-B1">
                             <div ref={imageRef1} className={`product-image-B1 ${animate1 ? 'slide-in' : ''}`}>
-                                <img src={chelonia} alt="chelonia" />
+                                <img src="/assets/chelonia.png" alt="chelonia" />
                             </div>
                             <div className="product-text-B1">
                                 <span className="category-B1">Chelonia</span>
@@ -102,7 +100,7 @@ export default function CheloniaB1  ()  {
 
         {/* Right Side: Image */}
         <div ref={imageRef2} className={`product-image-B1 ${animate2 ? 'slide-in' : ''}`}>
-                                <img src={chelonia1} alt="chelonia" />
+                                <img src="/assets/cheloniab1feu.png" alt="chelonia" />
                             </div>
       </div>
 

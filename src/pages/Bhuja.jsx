@@ -2,11 +2,6 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-// Assets
-import armImage from '/assets/bhuja1.png';
-import featureImage from '/assets/bhuja2.png';
-import showcaseVideo from '/assets/bhujavid.mp4';
-
 import './Bhuja.css';
 
 export default function Bhuja() {
@@ -40,7 +35,7 @@ research applications.
                         </div>
                         <div className="img-col">
                             <div className="hero-blob"></div>
-                            <img src={armImage} alt="Bhuja Robotic Arm" className="hero-img slide-in-right" />
+                            <img src="/assets/bhuja1.png" alt="Bhuja Robotic Arm" className="hero-img slide-in-right" />
                         </div>
                     </div>
                 </section>
@@ -77,7 +72,7 @@ It supports Base, Tool, and Joint modes with Teach and Repeat programming for ea
                         </div>
                         <div className="img-col">
                             <div className="spec-frame">
-                                <img src={featureImage} alt="Technical Specs" className="spec-img" />
+                                <img src="/assets/bhuja2.png" alt="Technical Specs" className="spec-img" />
                             </div>
                         </div>
                     </div>
@@ -91,7 +86,7 @@ It supports Base, Tool, and Joint modes with Teach and Repeat programming for ea
                         
                         <div className="video-player-box">
                             <video
-                                src={showcaseVideo}
+                                src="/assets/bhujavid.mp4"
                                 controls
                                 controlsList="nodownload"
                                 onContextMenu={(e) => e.preventDefault()}

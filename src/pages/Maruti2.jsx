@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import './Maruti2.css'
 import Navbar from '../components/Navbar'
-import chair11 from "/assets/maruti2.png"; // use actual path
-import maruthi1 from '/assets/maruthi2.mp4'
 import chair1 from '/assets/maruti2i.webp';
 import chair2 from '/assets/maruti2i1.webp';
 import chair3 from '/assets/maruti2i4.webp';
@@ -60,7 +58,7 @@ export default function Maruti2 ()  {
           ref={firstImgRef}
           className={`maruti-image scroll-animate slide-in-left ${isFirstImgVisible ? "visible" : ""}`}
         >
-          <img src={chair11} alt="Maruti 2.0" />
+          <img src="/assets/maruti2.png" alt="Maruti 2.0" />
         </div>
 
         {/* ✅ 4. Apply ref and classes to the Right Content */}
@@ -94,7 +92,7 @@ export default function Maruti2 ()  {
       <div className="video-wrapper">
       <video
         className="video-player"
-        src={maruthi1}
+        src="/assets/maruthi2.mp4"
         poster={preview}
         controls
         preload="metadata"

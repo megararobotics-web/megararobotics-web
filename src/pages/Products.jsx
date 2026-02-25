@@ -3,12 +3,6 @@ import Navbar from '../components/Navbar';
 import './Products.css';
 import Footer from '../components/Footer';
 
-// 🔥 IMPORT WEBM VIDEOS (with transparency)
-import Karambot from '/assets/karambot.webm';
-import WheelChair from '/assets/wheelChair.webm';
-import Warehouse from '/assets/warehouse.webm';
-import selfe from '/assets/selfe.webm';
-import EducationRobot from '/assets/educationRobot.webm';
 
 export default function Products() {
     const imageRef1 = useRef(null);
@@ -76,7 +70,7 @@ export default function Products() {
                             className={`product-image slide-in-left ${animate1 ? 'animate' : ''}`}
                         >
                             <video
-                                src={Karambot}
+                                src="/assets/karambot.webm"
                                 autoPlay
                                 loop
                                 muted
@@ -104,7 +98,7 @@ export default function Products() {
                             className={`product-image slide-in-left ${animate2 ? 'animate' : ''}`}
                         >
                             <video
-                                src={WheelChair}
+                                src="/assets/wheelChair.webm"
                                 autoPlay
                                 loop
                                 muted
@@ -133,7 +127,7 @@ export default function Products() {
                             className={`product-image slide-in-left ${animate3 ? 'animate' : ''}`}
                         >
                             <video
-                                src={selfe}
+                                src="/assets/selfe.webm"
                                 autoPlay
                                 loop
                                 muted
@@ -160,7 +154,7 @@ export default function Products() {
                             className={`product-image slide-in-right ${animate4 ? 'animate' : ''}`}
                         >
                             <video
-                                src={Warehouse}
+                                src="/assets/warehouse.webm"
                                 autoPlay
                                 loop
                                 muted
@@ -187,7 +181,7 @@ export default function Products() {
                             className={`product-image slide-in-left ${animate5 ? 'animate' : ''}`}
                         >
                             <video
-                                src={EducationRobot}
+                                src="/assets/educationRobot.webm"
                                 autoPlay
                                 loop
                                 muted

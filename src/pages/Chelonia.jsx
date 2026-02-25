@@ -1,9 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'; // ✅ Added imports
 import './Chelonia.css'
-import cheloniab1 from '/assets/cheloniab1.png'
-import cheloniab2 from '/assets/cheloniab2.png'
-import chelonia from '/assets/cheloniaa.png'
-
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -91,7 +87,7 @@ export default function Chelonia() {
               className={`chelonia-page-card scroll-animate fade-in-up ${isCard1Visible ? "visible" : ""}`} 
             >
               <div className="chelonia-page-card-img"> 
-                <img src={cheloniab1} alt="Chelonia B1" />
+                <img src="/assets/cheloniab1.png" alt="Chelonia B1" />
               </div>
               <div className="chelonia-page-card-content"> 
                 <h3>Chelonia B1</h3>
@@ -108,7 +104,7 @@ export default function Chelonia() {
               className={`chelonia-page-card scroll-animate fade-in-up ${isCard2Visible ? "visible" : ""}`} 
             >
               <div className="chelonia-page-card-img"> 
-                <img src={cheloniab2} alt="Chelonia B2" />
+                <img src="/assets/cheloniab2.png" alt="Chelonia B2" />
               </div>
               <div className="chelonia-page-card-content"> 
                 <h3>Chelonia B2</h3>
@@ -122,7 +118,7 @@ export default function Chelonia() {
               className={`chelonia-page-card scroll-animate fade-in-up ${isCard3Visible ? "visible" : ""}`} 
             >
               <div className="chelonia-page-card-img"> 
-                <img src={chelonia} alt="Chelonia A" />
+                <img src="/assets/cheloniaa.png" alt="Chelonia A" />
               </div>
               <div className="chelonia-page-card-content"> 
                 <h3>Chelonia A</h3>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import chair11 from "/assets/smorphi2.png"; // use actual path
 import Footer from '../components/Footer'
 import './Smorphi2.css'
 export default function smorphi2  () {
@@ -11,7 +10,7 @@ export default function smorphi2  () {
       <div className="maruti-container">
         {/* Left - Image */}
         <div className="maruti-image">
-          <img src={chair11} alt="Maruti 1.0" />
+          <img src="/assets/smorphi2.png" alt="Maruti 1.0" />
         </div>
 
         {/* Right - Content */}
